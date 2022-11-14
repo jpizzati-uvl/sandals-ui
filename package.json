@@ -1,5 +1,8 @@
 {
-  "name": "sandals-ui-component-library",
+  "name": "@jpizzati-uvl/sandals-ui-lib",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/jpizzati-uvl"
+  },
   "version": "0.1.0",
   "description": "The official Sandals UI Component Library",
   "author": "Jorge Pizzati",
