@@ -3,17 +3,19 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 
+const packageJson = require("./package.json");
+
 export default [
   {
     input: "src/index.ts",
     output: [
       {
-        file: "dist/cjs/index.js",
+        file: packageJson.main,
         format: "cjs",
         sourcemap: true,
       },
       {
-        file: "dist/esm/index.js",
+        file: packageJson.module,
         format: "esm",
         sourcemap: true,
       },
@@ -28,5 +30,6 @@ export default [
     input: "dist/esm/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
+    external: [/\.(css|less|scss)$/],
   },
 ];
