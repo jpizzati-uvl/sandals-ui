@@ -13,6 +13,9 @@ import typescript from "@rollup/plugin-typescript";
 // CSS Processing
 import postcss from "rollup-plugin-postcss";
 
+// CSS Vendor Prefixes
+import autoprefixer from "autoprefixer";
+
 // rollup your .d.ts files
 import dts from "rollup-plugin-dts";
 
@@ -44,10 +47,18 @@ export default [
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: "./tsconfig.json" }),
+      typescript({
+        tsconfig: "./tsconfig.json",
+        exclude: ["**/*.test.tsx", "**/*.stories.tsx"],
+      }),
       postcss({
+        plugins: [autoprefixer()],
         extract: false,
-        modules: true,
+        modules: {
+          generateScopedName: "[hash:base64:5]", // Prod only
+        },
+        sourceMap: true,
+        minimize: true,
         use: ["sass"],
       }),
       terser(),

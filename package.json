@@ -34,6 +34,7 @@
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.2.3",
     "@types/react": "^18.0.25",
+    "autoprefixer": "^10.4.13",
     "babel-jest": "^29.3.1",
     "babel-loader": "^8.3.0",
     "cypress": "^11.1.0",
