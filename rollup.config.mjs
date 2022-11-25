@@ -1,4 +1,4 @@
-// Needed to import package.json after rollup 3 upgrade
+// Needed in order to import package.json after rollup 3 upgrade
 import { createRequire } from "node:module";
 
 // Uses the node resolution algorithm for modules
