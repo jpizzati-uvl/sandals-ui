@@ -1,12 +1,10 @@
 import React from "react";
-import "./base.scss";
+import "../../../styles/master.scss";
 
 export interface BaseProps {
   children: object;
 }
 
-const Base = (props: BaseProps) => {
+export const Base = (props: BaseProps) => {
   return <>{props.children}</>;
 };
-
-export default Base;

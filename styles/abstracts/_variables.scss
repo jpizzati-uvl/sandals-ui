@@ -1,0 +1,187 @@
+/* stylelint-disable */
+/*
+// Variables -- DO NOT MODIFY
+// ------------------------------------------------ */
+
+/*==== Paths ====*/
+$cdn-url: "//cdn.sandals.com/sandals-ui/"; // Production
+$path: (
+  images: "#{$cdn-url}/uploads",
+  fonts: "/fonts",
+  svg: "/svg",
+);
+
+/*==== Scaffolding ====*/
+$link-color: color(shades, black) !default;
+$link-hover-color: lighten($link-color, 15%) !default;
+$link-hover-decoration: none !default;
+$transition-duration: 0.5s;
+$transition-style: ease-in-out;
+$divisor: #80808038;
+
+/*==== Fonts ====*/
+$font-max-size: 100;
+$font-max-tracking: 100;
+$font-max-leading: 100;
+$font-cache: "v=#{unique-id()}";
+
+// Sandals Icons Font
+$font-icons: "sandals-icons-font" !default;
+
+// Open Sans Font
+$font-os-light: "OpenSans-Light" !default;
+$font-os-regular: "OpenSans-Regular" !default;
+$font-os-semibold: "OpenSans-Semibold" !default;
+$font-os-bold: "OpenSans-Bold" !default;
+$font-os-extra-bold: "OpenSans-ExtraBold" !default;
+$font-os-condensed-bold: "OpenSansCondensed-Bold" !default;
+$font-os-condensed-light: "OpenSansCondensed-Light" !default;
+
+// Fallback Font
+$font-arial: Arial, Helvetica, sans-serif !default;
+
+// Default Font
+$font-base: $font-os-regular !default;
+$font-color: color(shades, black) !default;
+$font-weight: 400 !default;
+$font-size: 1.5rem !default;
+$line-height: 2rem !default;
+
+$font-families: (
+  // OpenSans
+  os300: $font-os-light,
+  os300cond: $font-os-condensed-light,
+  os400: $font-os-regular,
+  os600: $font-os-semibold,
+  os700: $font-os-bold,
+  os700cond: $font-os-condensed-bold,
+  os800: $font-os-extra-bold,
+  // ... Other fonts
+);
+
+// Headings
+$font-size-h1: 6rem !default;
+$font-size-h2: 4rem !default;
+$font-size-h3: 2.5rem !default;
+$font-size-h4: 2rem !default;
+$font-size-h5: 2rem !default;
+$font-size-h6: 2rem !default;
+
+$headings-margin: calc(1rem / 2) !default;
+$headings-font-weight: 400 !default;
+$headings-line-height: 1.1 !default;
+$headings-color: inherit !default;
+
+/*==== Breakpoints ====*/
+$breakpoints: (
+  xs-min: 0px,
+  xs-max: 767px,
+  sm-min: 768px,
+  sm-max: 991px,
+  md-min: 992px,
+  md-max: 1199px,
+  lg-min: 1200px,
+  lg-max: 1459px,
+  xl-min: 1460px,
+  xl-max: 1919px,
+  xxl-min: 1920px,
+);
+
+/*==== Grid System ====*/
+$container-width: 1180px;
+$width-xs: 30 !default;
+$width-sm: 48 !default;
+$width-md: 62 !default;
+$width-lg: 75 !default;
+$width-xl: 80 !default;
+
+$container-width-sm: 72rem;
+$container-width-md: 97rem;
+$container-width-lg: 113.4rem;
+$container-width-xxl: 158rem;
+
+$viewport-xs: map-get($breakpoints, xs-min) !default;
+$viewport-sm: map-get($breakpoints, sm-min) !default;
+$viewport-md: map-get($breakpoints, md-min) !default;
+$viewport-lg: map-get($breakpoints, lg-min) !default;
+$viewport-xl: map-get($breakpoints, xl-min) !default;
+$viewport-xxl: map-get($breakpoints, xxl-min) !default;
+
+$xs: "xs" !default;
+$sm: "sm" !default;
+$md: "md" !default;
+$lg: "lg" !default;
+$xl: "xl" !default;
+$xxl: "xxl" !default;
+
+$defaultQuery: $viewport-xs !default;
+$sizes: $xs $sm $md $lg $xl $xxl !default;
+$queries: (
+  #{$xs}: #{$viewport-xs},
+  #{$sm}: #{$viewport-sm},
+  #{$md}: #{$viewport-md},
+  #{$lg}: #{$viewport-lg},
+  #{$xl}: #{$viewport-xl},
+  #{$xxl}: #{$viewport-xxl}
+) !default;
+
+// Icon Variables
+$ic-checkmark: "\e938";
+$ic-error: "\e939";
+$ic-pass-hide: "\e900";
+$ic-plus: "\e901";
+$ic-ssg-balance-points: "\e902";
+$ic-butler-preferences: "\e903";
+$ic-calendar: "\e904";
+$ic-check-in-online: "\e905";
+$ic-cleanliness-protocols: "\e906";
+$ic-close: "\e907";
+$ic-covid-country-rules: "\e908";
+$ic-arrow-l: "\e909";
+$ic-delete: "\e90a";
+$ic-map-tag: "\e90b";
+$ic-download-app: "\e90c";
+$ic-arrow-d: "\e90d";
+$ic-download: "\e90e";
+$ic-download2: "\e90f";
+$ic-facebook: "\e910";
+$ic-calendar2: "\e911";
+$ic-golfing: "\e912";
+$ic-right: "\e913";
+$ic-ssl: "\e914";
+$ic-heart: "\e915";
+$ic-images: "\e916";
+$ic-error1: "\e917";
+$ic-instagram: "\e918";
+$ic-lock: "\e919";
+$ic-logout: "\e91a";
+$ic-dropdown: "\e91b";
+$ic-menu-contact: "\e91c";
+$ic-menu-extras: "\e91d";
+$ic-menu-favorites: "\e91e";
+$ic-menu-notifications: "\e91f";
+$ic-menu-offers: "\e920";
+$ic-menu-overview: "\e921";
+$ic-menu-payments: "\e922";
+$ic-check: "\e923";
+$ic-menu-profile: "\e924";
+$ic-menu-rewards: "\e925";
+$ic-menu-trips: "\e926";
+$ic-pass-show: "\e927";
+$ic-passport-info: "\e928";
+$ic-pay-due-balances: "\e929";
+$ic-points: "\e92a";
+$ic-profile: "\e92b";
+$ic-recognition: "\e92c";
+$ic-reload: "\e92d";
+$ic-resort-map: "\e92e";
+$ic-link-arrow: "\e92f";
+$ic-scuba: "\e930";
+$ic-info: "\e931";
+$ic-special-request: "\e932";
+$ic-things-to-know: "\e933";
+$ic-remove: "\e934";
+$ic-twitter: "\e935";
+$ic-vacation-extras: "\e936";
+$ic-weedings: "\e937";
+/* stylelint-enable */

@@ -1,0 +1,139 @@
+/*
+// Font Families
+// ------------------------------------------------ */
+
+// sandals-icon font
+@font-face {
+  font-family: $font-icons;
+  src: url("#{map-deep-get($path, fonts)}/#{$font-icons}/fonts/#{$font-icons}.woff?#{$font-cache}")
+    format("woff");
+  src: url("#{map-deep-get($path, fonts)}/#{$font-icons}/fonts/#{$font-icons}.ttf?#{$font-cache}")
+      format("truetype"),
+    url("#{map-deep-get($path, fonts)}/#{$font-icons}/fonts/#{$font-icons}.eot?#{$font-cache}")
+      format("embedded-opentype"),
+    url("#{map-deep-get($path, fonts)}/#{$font-icons}/fonts/#{$font-icons}.svg?#{$font-cache}")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+// OpenSans
+@font-face {
+  font-family: $font-os-light;
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/Light/#{$font-os-light}.woff?#{$font-cache}")
+    format("woff");
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/Light/#{$font-os-light}.woff2?#{$font-cache}")
+      format("woff2"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Light/#{$font-os-light}.eot?#{$font-cache}")
+      format("embedded-opentype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Light/#{$font-os-light}.ttf?#{$font-cache}")
+      format("truetype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Light/#{$font-os-light}.svg?#{$font-cache}")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-os-regular;
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/Regular/#{$font-os-regular}.woff?#{$font-cache}")
+    format("woff");
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/Regular/#{$font-os-regular}.woff2?#{$font-cache}")
+      format("woff2"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Regular/#{$font-os-regular}.eot?#{$font-cache}")
+      format("embedded-opentype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Regular/#{$font-os-regular}.ttf?#{$font-cache}")
+      format("truetype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Regular/#{$font-os-regular}.svg?#{$font-cache}")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-os-semibold;
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/Semibold/#{$font-os-semibold}.woff?#{$font-cache}")
+    format("woff");
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/Semibold/#{$font-os-semibold}.woff2?#{$font-cache}")
+      format("woff2"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Semibold/#{$font-os-semibold}.eot?#{$font-cache}")
+      format("embedded-opentype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Semibold/#{$font-os-semibold}.ttf?#{$font-cache}")
+      format("truetype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Semibold/#{$font-os-semibold}.svg?#{$font-cache}")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-os-bold;
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/Bold/#{$font-os-bold}.woff?#{$font-cache}")
+    format("woff");
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/Bold/#{$font-os-bold}.woff2?#{$font-cache}")
+      format("woff2"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Bold/#{$font-os-bold}.eot?#{$font-cache}")
+      format("embedded-opentype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Bold/#{$font-os-bold}.ttf?#{$font-cache}")
+      format("truetype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Bold/#{$font-os-bold}.svg?#{$font-cache}")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-os-extra-bold;
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/ExtraBold/#{$font-os-extra-bold}.woff?#{$font-cache}")
+    format("woff");
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/ExtraBold/#{$font-os-extra-bold}.woff2?#{$font-cache}")
+      format("woff2"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/ExtraBold/#{$font-os-extra-bold}.eot?#{$font-cache}")
+      format("embedded-opentype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/ExtraBold/#{$font-os-extra-bold}.ttf?#{$font-cache}")
+      format("truetype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/ExtraBold/#{$font-os-extra-bold}.svg?#{$font-cache}")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-os-condensed-bold;
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/Condensed/Bold/#{$font-os-condensed-bold}.woff?#{$font-cache}")
+    format("woff");
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/Condensed/Bold/#{$font-os-condensed-bold}.woff2?#{$font-cache}")
+      format("woff2"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Condensed/Bold/#{$font-os-condensed-bold}.eot?#{$font-cache}")
+      format("embedded-opentype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Condensed/Bold/#{$font-os-condensed-bold}.ttf?#{$font-cache}")
+      format("truetype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Condensed/Bold/#{$font-os-condensed-bold}.svg?#{$font-cache}")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $font-os-condensed-light;
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/Condensed/Light/#{$font-os-condensed-light}.woff?#{$font-cache}")
+    format("woff");
+  src: url("#{map-deep-get($path, fonts)}/OpenSans/Condensed/Light/#{$font-os-condensed-light}.woff2?#{$font-cache}")
+      format("woff2"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Condensed/Light/#{$font-os-condensed-light}.eot?#{$font-cache}")
+      format("embedded-opentype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Condensed/Light/#{$font-os-condensed-light}.ttf?#{$font-cache}")
+      format("truetype"),
+    url("#{map-deep-get($path, fonts)}/OpenSans/Condensed/Light/#{$font-os-condensed-light}.svg?#{$font-cache}")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

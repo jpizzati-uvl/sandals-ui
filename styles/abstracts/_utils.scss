@@ -1,0 +1,42 @@
+.capitalize {
+  text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.unclickable {
+  pointer-events: none;
+}
+
+.clickable {
+  pointer-events: all;
+}
+
+.fh {
+  height: 100%;
+  max-height: 100vh;
+}
+
+.fw {
+  width: 100%;
+  max-width: 100%;
+}
+
+.fvh {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.ovf-x {
+  overflow-x: auto;
+}
+
+.ovf-y {
+  overflow-y: auto;
+}

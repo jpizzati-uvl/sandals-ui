@@ -55,7 +55,7 @@ export default [
         plugins: [autoprefixer()],
         extract: false,
         modules: {
-          generateScopedName: "[local]_[hash:base64:5]", // Prod only
+          generateScopedName: "[hash:base64:5]", // Prod only
         },
         sourceMap: true,
         minimize: true,

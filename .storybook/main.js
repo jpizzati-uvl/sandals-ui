@@ -14,7 +14,8 @@ module.exports = {
         },
         cssLoaderOptions: {
           modules: {
-            localIdentName: "[local]_[hash:base64:5]",
+            localIdentName: "[local]",
+            // localIdentName: "[hash:base64:5]",
           },
         },
       },

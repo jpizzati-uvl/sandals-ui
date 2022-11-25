@@ -1,3 +1,3 @@
 // Base
-export { default as Base } from "./base/base";
-export { default as Button } from "./base/button";
+export { Base } from "./base/base";
+export { Button } from "./base/button";
