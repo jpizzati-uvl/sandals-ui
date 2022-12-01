@@ -51,17 +51,138 @@
   }
 }
 
+// Spacing class generation - DO NOT MODIFY
+@mixin spacing() {
+  @each $size in $sizes {
+    // PADDING
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:p-#{$spacing-size} {
+        @include queries($size, $queries) {
+          padding: (calc($spacing-size/10) + rem);
+        }
+      }
+    }
+
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:px-#{$spacing-size} {
+        @include queries($size, $queries) {
+          padding: 0 (calc($spacing-size/10) + rem);
+        }
+      }
+    }
+
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:py-#{$spacing-size} {
+        @include queries($size, $queries) {
+          padding: (calc($spacing-size/10) + rem) 0;
+        }
+      }
+    }
+
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:pt-#{$spacing-size} {
+        @include queries($size, $queries) {
+          padding-top: (calc($spacing-size/10) + rem);
+        }
+      }
+    }
+
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:pb-#{$spacing-size} {
+        @include queries($size, $queries) {
+          padding-bottom: (calc($spacing-size/10) + rem);
+        }
+      }
+    }
+
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:pl-#{$spacing-size} {
+        @include queries($size, $queries) {
+          padding-left: (calc($spacing-size/10) + rem);
+        }
+      }
+    }
+
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:pr-#{$spacing-size} {
+        @include queries($size, $queries) {
+          padding-right: (calc($spacing-size/10) + rem);
+        }
+      }
+    }
+
+    // MARGIN
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:m-#{$spacing-size} {
+        @include queries($size, $queries) {
+          margin: (calc($spacing-size/10) + rem);
+        }
+      }
+    }
+
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:mx-#{$spacing-size} {
+        @include queries($size, $queries) {
+          margin: 0 (calc($spacing-size/10) + rem);
+        }
+      }
+    }
+
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:my-#{$spacing-size} {
+        @include queries($size, $queries) {
+          margin: (calc($spacing-size/10) + rem) 0;
+        }
+      }
+    }
+
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:mt-#{$spacing-size} {
+        @include queries($size, $queries) {
+          margin-top: (calc($spacing-size/10) + rem);
+        }
+      }
+    }
+
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:mb-#{$spacing-size} {
+        @include queries($size, $queries) {
+          margin-bottom: (calc($spacing-size/10) + rem);
+        }
+      }
+    }
+
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:ml-#{$spacing-size} {
+        @include queries($size, $queries) {
+          margin-left: (calc($spacing-size/10) + rem);
+        }
+      }
+    }
+
+    @for $spacing-size from 0 through $spacing-max-size {
+      .#{$size}\:mr-#{$spacing-size} {
+        @include queries($size, $queries) {
+          margin-right: (calc($spacing-size/10) + rem);
+        }
+      }
+    }
+  }
+}
+
 // Typography class generation - DO NOT MODIFY
 @mixin typography() {
-  @each $family, $family-name in $font-families {
-    .#{$family} {
-      font-family: $family-name;
+  @each $family-name, $group in $font-families {
+    @each $group-name, $font-name in $group {
+      .ff-#{$family-name}-#{"" + $group-name} {
+        font-family: $font-name;
+      }
     }
   }
 
   @each $size in $sizes {
     @for $font-size from 0 through $font-max-size {
-      .#{$size}-fs#{$font-size} {
+      .#{$size}\:fs-#{$font-size} {
         @include queries($size, $queries) {
           font-size: calc($font-size / 10) + rem;
         }
@@ -69,7 +190,7 @@
     }
 
     @for $font-tracking from 0 through $font-max-tracking {
-      .#{$size}-ft#{$font-tracking} {
+      .#{$size}\:ls-#{$font-tracking} {
         @include queries($size, $queries) {
           letter-spacing: calc($font-tracking / 100) + rem;
         }
@@ -77,7 +198,7 @@
     }
 
     @for $font-leading from 0 through $font-max-leading {
-      .#{$size}-fl#{$font-leading} {
+      .#{$size}\:lh-#{$font-leading} {
         @include queries($size, $queries) {
           line-height: calc($font-leading / 10) + rem;
         }
@@ -86,23 +207,54 @@
   }
 }
 
+@mixin font-stroke($color, $size) {
+  -webkit-text-stroke: $size $color;
+  text-stroke: $size $color;
+}
+@mixin font-gradient($topColor, $bottomColor) {
+  color: $bottomColor;
+  background: -webkit-linear-gradient($topColor 53%, $bottomColor 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 // Color class generation - DO NOT MODIFY
-@mixin colors() {
+@mixin color() {
   @each $color-name, $group in $colors {
     @each $group-name, $color-hex in $group {
-      .#{"" + $color-name}-#{"" + $group-name} {
-        color: #{$color-hex};
+      @if length($group) > 1 {
+        .fc-#{"" + $color-name}-#{"" + $group-name} {
+          color: #{$color-hex};
+        }
+      } @else {
+        .fc-#{"" + $color-name} {
+          color: #{$color-hex};
+        }
       }
     }
   }
 }
 
-@mixin background() {
+@mixin background-color() {
   @each $color-name, $group in $colors {
     @each $group-name, $color-hex in $group {
-      .#{"" + $color-name}-#{"" + $group-name}-bg {
-        background: #{$color-hex};
+      @if length($group) > 1 {
+        .bg-#{"" + $color-name}-#{"" + $group-name} {
+          background: #{$color-hex};
+        }
+      } @else {
+        .bg-#{"" + $color-name} {
+          background: #{$color-hex};
+        }
       }
+    }
+  }
+}
+
+@mixin background-gradient() {
+  @each $color-name, $group in $gradients {
+    .bg-#{"" + $color-name} {
+      @include gradient-vertical(nth($group, 1), nth($group, 2));
     }
   }
 }
@@ -179,23 +331,6 @@
   ); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
-}
-
-// Typography
-@mixin font-size($font-size: 1.2rem, $line-height: 1.6rem) {
-  font-size: $font-size;
-  line-height: $line-height;
-}
-
-@mixin text-stroke($color, $size) {
-  -webkit-text-stroke: $size $color;
-  text-stroke: $size $color;
-}
-@mixin text-gradient($topColor, $bottomColor) {
-  color: $bottomColor;
-  background: -webkit-linear-gradient($topColor 53%, $bottomColor 90%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 // Animations

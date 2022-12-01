@@ -4,16 +4,15 @@
 // ------------------------------------------------ */
 
 /*==== Paths ====*/
-$cdn-url: "//cdn.sandals.com/sandals-ui/"; // Production
+$cdn-url: "https://cdn.sandals.com/sandals/sandals-ui"; // Production
 $path: (
   images: "#{$cdn-url}/uploads",
-  fonts: "/fonts",
-  svg: "/svg",
+  fonts: "#{$cdn-url}/fonts",
+  svg: "#{$cdn-url}/svg",
 );
 
 /*==== Scaffolding ====*/
-$link-color: color(shades, black) !default;
-$link-hover-color: lighten($link-color, 15%) !default;
+$link-color: color(black, df) !default;
 $link-hover-decoration: none !default;
 $transition-duration: 0.5s;
 $transition-style: ease-in-out;
@@ -37,27 +36,21 @@ $font-os-extra-bold: "OpenSans-ExtraBold" !default;
 $font-os-condensed-bold: "OpenSansCondensed-Bold" !default;
 $font-os-condensed-light: "OpenSansCondensed-Light" !default;
 
+// Bodoni Font
+$font-bodoni-regular: "Bodoni-Regular" !default;
+
+// Happy Feet Font
+$font-hf-regular: "HappyFeet-Regular" !default;
+
 // Fallback Font
 $font-arial: Arial, Helvetica, sans-serif !default;
 
 // Default Font
 $font-base: $font-os-regular !default;
-$font-color: color(shades, black) !default;
+$font-color: color(black, df) !default;
 $font-weight: 400 !default;
 $font-size: 1.5rem !default;
 $line-height: 2rem !default;
-
-$font-families: (
-  // OpenSans
-  os300: $font-os-light,
-  os300cond: $font-os-condensed-light,
-  os400: $font-os-regular,
-  os600: $font-os-semibold,
-  os700: $font-os-bold,
-  os700cond: $font-os-condensed-bold,
-  os800: $font-os-extra-bold,
-  // ... Other fonts
-);
 
 // Headings
 $font-size-h1: 6rem !default;
@@ -71,6 +64,9 @@ $headings-margin: calc(1rem / 2) !default;
 $headings-font-weight: 400 !default;
 $headings-line-height: 1.1 !default;
 $headings-color: inherit !default;
+
+/*==== Spacing ====*/
+$spacing-max-size: 200;
 
 /*==== Breakpoints ====*/
 $breakpoints: (

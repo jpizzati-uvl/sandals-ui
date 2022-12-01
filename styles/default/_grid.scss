@@ -217,7 +217,7 @@ $offset-properties: "margin-left" !default;
   flex-direction: row-reverse;
 }
 
-@include breakpoints(".column-reverse") {
+@include breakpoints(".col-reverse") {
   flex-direction: column-reverse;
 }
 
@@ -288,4 +288,6 @@ $offset-properties: "margin-left" !default;
     }
   }
 }
+
+@include spacing();
 /* stylelint-enable */

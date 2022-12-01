@@ -1,53 +1,69 @@
 /*
-// Colors Abstract 
+// Colors Abstract -- DO NOT MODIFY
 // ------------------------------------------------ */
 
-$shades: (
-  blue: #add8e6,
-  red: #ffcccb,
-  black: #000,
-  white: #fff,
-  transparent: transparent,
-);
-$blue: (
-  light1: #17a8e4,
-  default: #18a9e5,
-  dark1: #447daa,
-  dark2: #00193d,
-);
-$gray: (
-  light6: #f5f5f5,
-  light5: #dbdbdb,
-  light4: #939393,
-  light3: #f1f1f1,
-  light2: #d0d0d0,
-  light1: #c2c2c2,
-  default: #a0a0a0,
-  dark1: #646464,
-  dark2: #242424,
-  dark3: #939393,
-);
-$red: (
-  light5: #fdd,
-  light4: #c8786a,
-  light3: #ac4c4c,
-  light2: #852c2c,
-  light1: #c00,
-  default: #ba271a,
-  dark1: #db0000,
-  dark2: #c00,
-);
-$green: (
-  default: #5faa44,
-);
-$colors: (
-  shades: $shades,
-  gray: $gray,
-  blue: $blue,
-  red: $red,
-  green: $green,
+// Colors
+$black: (
+  df: #000,
 );
 
-// Handle color assignments -- DO NOT MODIFY
-@include colors;
-@include background;
+$white: (
+  df: #fff,
+);
+
+$blue: (
+  df: #447daa,
+  dk: #0d2542,
+  lt: #18a9e5,
+  cy: #2bcfde,
+);
+
+$teal: (
+  df: #0d2542,
+  dk: #447daa,
+  lt: #18a9e5,
+);
+
+$gray: (
+  24: #242424,
+  84: #848484,
+  C4: #c4c4c4,
+  DD: #dddddd,
+  F1: #f1f1f1,
+);
+
+$red: (
+  df: #cc0000,
+  lt: #efd6d6,
+);
+
+$yellow: (
+  df: #e3e333,
+);
+
+$gold: (
+  df: #caaa81,
+  lt: #e6e1d9,
+);
+
+// Gradients
+$tealGt: (#2140c4, #61ccdb);
+
+$colors: (
+  black: $black,
+  white: $white,
+  gray: $gray,
+  blue: $blue,
+  teal: $teal,
+  red: $red,
+  yellow: $yellow,
+  gold: $gold,
+);
+
+$gradients: (
+  teal-gt: $tealGt,
+);
+
+@include color;
+@include background-color;
+@include background-gradient;

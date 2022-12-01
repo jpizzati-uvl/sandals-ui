@@ -28,10 +28,10 @@ export const Button = ({
   return (
     <button
       onClick={onClick}
-      className={`${style.default} ${className}`}
+      className={`${style.primary}${className ? ` ${className}` : ""}`}
       {...props}
     >
-      {label}
+      <h1>{label}</h1>
     </button>
   );
 };

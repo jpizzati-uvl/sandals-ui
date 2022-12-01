@@ -1,53 +1,28 @@
 /*
-// Common typography
+// Common typography -- DO NOT MODIFY
 // ------------------------------------------------ */
+$base: (
+  lt: $font-os-light,
+  lt-cd: $font-os-condensed-light,
+  rg: $font-os-regular,
+  sb: $font-os-semibold,
+  bd: $font-os-bold,
+  bd-cd: $font-os-condensed-bold,
+  eb: $font-os-extra-bold,
+);
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: $headings-margin 0;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
-  color: $headings-color;
-}
+$custom: (
+  rg: $font-hf-regular,
+);
 
-b {
-  font-weight: 700;
-}
+$weddings: (
+  rg: $font-bodoni-regular,
+);
 
-h1 {
-  font-size: $font-size-h1;
-}
+$font-families: (
+  base: $base,
+  custom: $custom,
+  weddings: $weddings,
+);
 
-h2 {
-  font-size: $font-size-h2;
-}
-
-h3 {
-  font-size: $font-size-h3;
-}
-
-h4 {
-  font-size: $font-size-h4;
-}
-
-h5 {
-  font-size: $font-size-h5;
-}
-
-h6 {
-  font-size: $font-size-h6;
-}
-
-hr {
-  width: 100%;
-  margin: 0;
-  border: 0;
-  border-top: 0.1rem solid #808080;
-}
-
-// Handle typography assignments -- DO NOT MODIFY
 @include typography();
