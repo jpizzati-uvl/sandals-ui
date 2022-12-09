@@ -61,12 +61,14 @@ export default [
             content: ["./src/**/*.tsx", "./src/**/*.ts"],
             safelist: [
               // Scaffolding
-              /^xs-/,
-              /^sm-/,
-              /^md-/,
-              /^lg-/,
-              /^xl-/,
-              /^xxl-/,
+              /^xs/,
+              /^sm/,
+              /^md/,
+              /^lg/,
+              /^xl/,
+              /^xxl/,
+              // Fonts
+              /^fc-/,
               // Backgrounds
               /^bg-/,
             ],

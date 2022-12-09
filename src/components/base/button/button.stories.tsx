@@ -32,6 +32,6 @@ buttonA.args = {
 export const buttonB = Template.bind({});
 buttonB.args = {
   label: "Button B",
-  className: "xs:p-15 xs:mt-50 ff-baseEb fc-white xs:fs-25 sm:fs-45 bg-black",
+  className: "xs:p-15 xs:mt-50 ff-base-eb fc-white xs:fs-25 sm:fs-45 bg-black",
   onClick: () => alert("You clicked me!"),
 };

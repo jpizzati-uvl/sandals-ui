@@ -1,0 +1,11 @@
+/*
+// Common spacing -- DO NOT MODIFY
+// ------------------------------------------------ */
+
+$margin: ("m", "mx", "my", "mt", "mb", "ml", "mr");
+$padding: ("p", "px", "py", "pt", "pb", "pl", "pr");
+
+$spacing: (
+  margin: $margin,
+  padding: $padding,
+);

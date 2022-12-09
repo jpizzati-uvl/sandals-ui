@@ -54,116 +54,70 @@
 // Spacing class generation - DO NOT MODIFY
 @mixin spacing() {
   @each $size in $sizes {
-    // PADDING
     @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:p-#{$spacing-size} {
-        @include queries($size, $queries) {
-          padding: (calc($spacing-size/10) + rem);
-        }
-      }
-    }
+      @each $spacing-name, $group in $spacing {
+        @each $group-name in $group {
+          .#{$size}\:#{$group-name}-#{$spacing-size} {
+            @include queries($size, $queries) {
+              // Padding
+              @if $group-name == "p" {
+                padding: (calc($spacing-size/10) + rem);
+              }
 
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:px-#{$spacing-size} {
-        @include queries($size, $queries) {
-          padding: 0 (calc($spacing-size/10) + rem);
-        }
-      }
-    }
+              @if ($group-name == "px") {
+                padding: 0 (calc($spacing-size/10) + rem);
+              }
 
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:py-#{$spacing-size} {
-        @include queries($size, $queries) {
-          padding: (calc($spacing-size/10) + rem) 0;
-        }
-      }
-    }
+              @if ($group-name == "py") {
+                padding: (calc($spacing-size/10) + rem) 0;
+              }
 
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:pt-#{$spacing-size} {
-        @include queries($size, $queries) {
-          padding-top: (calc($spacing-size/10) + rem);
-        }
-      }
-    }
+              @if ($group-name == "pt") {
+                padding-top: (calc($spacing-size/10) + rem);
+              }
 
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:pb-#{$spacing-size} {
-        @include queries($size, $queries) {
-          padding-bottom: (calc($spacing-size/10) + rem);
-        }
-      }
-    }
+              @if ($group-name == "pb") {
+                padding-bottom: (calc($spacing-size/10) + rem);
+              }
 
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:pl-#{$spacing-size} {
-        @include queries($size, $queries) {
-          padding-left: (calc($spacing-size/10) + rem);
-        }
-      }
-    }
+              @if ($group-name == "pl") {
+                padding-left: (calc($spacing-size/10) + rem);
+              }
 
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:pr-#{$spacing-size} {
-        @include queries($size, $queries) {
-          padding-right: (calc($spacing-size/10) + rem);
-        }
-      }
-    }
+              @if ($group-name == "pr") {
+                padding-right: (calc($spacing-size/10) + rem);
+              }
 
-    // MARGIN
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:m-#{$spacing-size} {
-        @include queries($size, $queries) {
-          margin: (calc($spacing-size/10) + rem);
-        }
-      }
-    }
+              // Margin
+              @if $group-name == "m" {
+                margin: (calc($spacing-size/10) + rem);
+              }
 
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:mx-#{$spacing-size} {
-        @include queries($size, $queries) {
-          margin: 0 (calc($spacing-size/10) + rem);
-        }
-      }
-    }
+              @if ($group-name == "mx") {
+                margin: 0 (calc($spacing-size/10) + rem);
+              }
 
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:my-#{$spacing-size} {
-        @include queries($size, $queries) {
-          margin: (calc($spacing-size/10) + rem) 0;
-        }
-      }
-    }
+              @if ($group-name == "my") {
+                margin: (calc($spacing-size/10) + rem) 0;
+              }
 
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:mt-#{$spacing-size} {
-        @include queries($size, $queries) {
-          margin-top: (calc($spacing-size/10) + rem);
-        }
-      }
-    }
+              @if ($group-name == "mt") {
+                margin-top: (calc($spacing-size/10) + rem);
+              }
 
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:mb-#{$spacing-size} {
-        @include queries($size, $queries) {
-          margin-bottom: (calc($spacing-size/10) + rem);
-        }
-      }
-    }
+              @if ($group-name == "mb") {
+                margin-bottom: (calc($spacing-size/10) + rem);
+              }
 
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:ml-#{$spacing-size} {
-        @include queries($size, $queries) {
-          margin-left: (calc($spacing-size/10) + rem);
-        }
-      }
-    }
+              @if ($group-name == "ml") {
+                margin-left: (calc($spacing-size/10) + rem);
+              }
 
-    @for $spacing-size from 0 through $spacing-max-size {
-      .#{$size}\:mr-#{$spacing-size} {
-        @include queries($size, $queries) {
-          margin-right: (calc($spacing-size/10) + rem);
+              @if ($group-name == "mr") {
+                margin-right: (calc($spacing-size/10) + rem);
+              }
+            }
+          }
         }
       }
     }
