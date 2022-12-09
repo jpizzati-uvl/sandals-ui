@@ -13,6 +13,9 @@ import typescript from "@rollup/plugin-typescript";
 // CSS Processing
 import postcss from "rollup-plugin-postcss";
 
+// CSS Remove unused classes
+import purgecss from "@fullhuman/postcss-purgecss";
+
 // CSS Vendor Prefixes
 import autoprefixer from "autoprefixer";
 
@@ -52,7 +55,12 @@ export default [
         exclude: ["**/*.test.tsx", "**/*.stories.tsx"],
       }),
       postcss({
-        plugins: [autoprefixer()],
+        plugins: [
+          autoprefixer(),
+          purgecss({
+            content: ["./src/**/*.tsx", "./src/**/*.ts"],
+          }),
+        ],
         extract: false,
         modules: {
           generateScopedName: "[hash:base64:5]", // Prod only
