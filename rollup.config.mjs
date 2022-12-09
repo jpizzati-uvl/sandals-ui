@@ -59,6 +59,17 @@ export default [
           autoprefixer(),
           purgecss({
             content: ["./src/**/*.tsx", "./src/**/*.ts"],
+            safelist: [
+              // Scaffolding
+              /^xs-/,
+              /^sm-/,
+              /^md-/,
+              /^lg-/,
+              /^xl-/,
+              /^xxl-/,
+              // Backgrounds
+              /^bg-/,
+            ],
           }),
         ],
         extract: false,
