@@ -80,7 +80,7 @@ export default [
         extract: false,
         modules: {
           // globalModulePaths: [".*\\.global\\..*"],
-          generateScopedName: "[hash:base64:5]",
+          generateScopedName: "[local]",
         },
         sourceMap: true,
         minimize: true,
@@ -88,8 +88,8 @@ export default [
           [
             "sass",
             {
-              includePaths: [path.resolve("./src/styles")],
-              data: '@import "./src/styles/master.scss";',
+              // includePaths: [path.resolve("./src/styles")],
+              data: '@import "./src/styles/master";',
             },
           ],
         ],
