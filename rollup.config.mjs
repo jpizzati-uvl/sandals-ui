@@ -28,12 +28,7 @@ import terser from "@rollup/plugin-terser";
 // Prevents module duplication
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
-import { fileURLToPath } from "url";
-
 const require = createRequire(import.meta.url);
-const path = require("path");
-const { dirname } = path;
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const packageJson = require("./package.json");
 
 export default [
@@ -85,15 +80,7 @@ export default [
         },
         sourceMap: true,
         minimize: true,
-        use: [
-          [
-            "sass",
-            {
-              data: '@import "./src/styles/abstracts/_variables.scss"; @import "./src/styles/abstracts/_mixins.scss";',
-              includePaths: [path.join(__dirname, "src")],
-            },
-          ],
-        ],
+        use: ["sass"],
       }),
       terser(),
     ],

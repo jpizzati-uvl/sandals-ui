@@ -2,9 +2,9 @@
 .default {
   background: color(black, df);
   color: color(white, df);
-  font-family: $font-os-bold;
+  // font-family: $font-os-bold;
   text-transform: uppercase;
-  @include fadeIn();
+  // @include fadeIn();
 }
 
 // Size
