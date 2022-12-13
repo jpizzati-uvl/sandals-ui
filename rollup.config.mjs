@@ -89,7 +89,7 @@ export default [
           [
             "sass",
             {
-              data: '@import "./src/styles/master.scss";',
+              data: '@import "./src/styles/abstracts/_variables.scss"; @import "./src/styles/abstracts/_mixins.scss";',
               includePaths: [path.join(__dirname, "src")],
             },
           ],

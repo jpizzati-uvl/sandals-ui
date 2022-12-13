@@ -4,6 +4,7 @@
   color: color(white, df);
   font-family: $font-os-bold;
   text-transform: uppercase;
+  @include fadeIn();
 }
 
 // Size
