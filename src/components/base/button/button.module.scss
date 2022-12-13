@@ -1,3 +1,24 @@
-.primary {
-  pointer-events: all;
+// Appearance
+.default {
+  background: color(black, df);
+  color: color(white, df);
+  font-family: $font-os-bold;
+  text-transform: uppercase;
+}
+
+// Size
+.xs {
+  font-size: 1.2rem;
+  line-height: 3rem;
+  padding: 2rem 0.5rem;
+}
+.sm {
+  font-size: 1.4rem;
+  line-height: 3rem;
+  padding: 3rem 1rem;
+}
+.lg {
+  font-size: 2rem;
+  line-height: 5rem;
+  padding: 4rem 1.5rem;
 }

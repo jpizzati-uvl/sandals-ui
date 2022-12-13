@@ -2,17 +2,13 @@ import React from "react";
 import style from "./button.module.scss";
 
 export interface ButtonProps {
-  /**
-   * Call to action
-   */
+  /*** Support multiple styles i.e. weddings */
+  theme?: string;
+  /*** Call to action */
   label: string;
-  /**
-   * Optional specific styles
-   */
-  className?: string;
-  /**
-   * Optional click handler
-   */
+  /*** Different sized buttons */
+  size?: string;
+  /*** Optional click handler */
   onClick?: () => void;
 }
 
@@ -20,18 +16,19 @@ export interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = ({
+  theme = "default",
   label,
-  className,
+  size = "xs",
   onClick,
   ...props
 }: ButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className={`${style.primary}${className ? ` ${className}` : ""}`}
+      className={`${style[theme]} ${style[size]}`}
       {...props}
     >
-      <h1>{label}</h1>
+      {label}
     </button>
   );
 };
