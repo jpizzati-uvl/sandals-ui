@@ -28,6 +28,9 @@ import terser from "@rollup/plugin-terser";
 // Prevents module duplication
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 
+// Local filesystem
+import path from "node:path";
+
 const require = createRequire(import.meta.url);
 const packageJson = require("./package.json");
 
@@ -57,30 +60,40 @@ export default [
       postcss({
         plugins: [
           autoprefixer(),
-          purgecss({
-            content: ["./src/**/*.tsx", "./src/**/*.ts"],
-            safelist: [
-              // Scaffolding
-              /^xs/,
-              /^sm/,
-              /^md/,
-              /^lg/,
-              /^xl/,
-              /^xxl/,
-              // Fonts
-              /^fc-/,
-              // Backgrounds
-              /^bg-/,
-            ],
-          }),
+          // purgecss({
+          //   content: ["./src/**/*.tsx", "./src/**/*.ts"],
+          //   safelist: [
+          //     // Scaffolding
+          //     /^xs/,
+          //     /^sm/,
+          //     /^md/,
+          //     /^lg/,
+          //     /^xl/,
+          //     /^xxl/,
+          //     // Fonts
+          //     /^fc-/,
+          //     // Backgrounds
+          //     /^bg-/,
+          //   ],
+          // }),
         ],
         extract: false,
         modules: {
-          generateScopedName: "[hash:base64:5]", // Prod only
+          // globalModulePaths: [".*\\.global\\..*"],
+          generateScopedName: "[hash:base64:5]",
         },
         sourceMap: true,
         minimize: true,
-        use: ["sass"],
+        use: [
+          [
+            "sass",
+            {
+              includePaths: [path.resolve("./src/styles")],
+              data: '@import "./src/styles/master.scss";',
+            },
+          ],
+        ],
+        extensions: [".scss"],
       }),
       terser(),
     ],

@@ -22,6 +22,8 @@ export const Button = ({
   onClick,
   ...props
 }: ButtonProps) => {
+  console.log(style[size]);
+
   return (
     <button
       onClick={onClick}
