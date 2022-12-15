@@ -13,10 +13,8 @@ import typescript from "@rollup/plugin-typescript";
 // CSS Processing
 import postcss from "rollup-plugin-postcss";
 
-// CSS Remove unused classes
+import stringHash from "string-hash";
 import purgecss from "@fullhuman/postcss-purgecss";
-
-// CSS Vendor Prefixes
 import autoprefixer from "autoprefixer";
 
 // rollup your .d.ts files
@@ -27,9 +25,6 @@ import terser from "@rollup/plugin-terser";
 
 // Prevents module duplication
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
-
-// Local filesystem
-import path from "node:path";
 
 const require = createRequire(import.meta.url);
 const packageJson = require("./package.json");
@@ -79,8 +74,17 @@ export default [
         ],
         extract: false,
         modules: {
-          // globalModulePaths: [".*\\.global\\..*"],
-          generateScopedName: "[local]",
+          generateScopedName: "[hash:base64:5]",
+          // generateScopedName: function (name, filename, css) {
+          //   console.log(filename);
+          //   if (!filename.includes(".module")) return name;
+
+          //   const i = css.indexOf(`.${name}`);
+          //   const lineNumber = css.substr(0, i).split(/[\r\n]/).length;
+          //   const hash = stringHash(css).toString(36).substr(0, 5);
+
+          //   return `${hash}_${lineNumber}`;
+          // },
         },
         sourceMap: true,
         minimize: true,
@@ -88,12 +92,10 @@ export default [
           [
             "sass",
             {
-              // includePaths: [path.resolve("./src/styles")],
-              data: '@import "./src/styles/master";',
+              data: '@import "./src/styles/abstracts/variables", "./src/styles/abstracts/mixins";',
             },
           ],
         ],
-        extensions: [".scss"],
       }),
       terser(),
     ],

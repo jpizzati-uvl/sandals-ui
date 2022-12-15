@@ -1,13 +1,8 @@
-// @import "../../../styles/abstracts/variables",
-//   "../../../styles/abstracts/mixins";
-
 // Theme
 .default {
-  background: color(black, df);
-  color: color(white, df);
-  font-family: $font-os-bold;
+  color: black;
+  // font-family: $font-os-semibold;
   text-transform: uppercase;
-  @include fadeIn();
 }
 
 // Size
