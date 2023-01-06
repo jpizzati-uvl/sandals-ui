@@ -1,22 +1,24 @@
 /*
 // Common typography -- DO NOT MODIFY
 // ------------------------------------------------ */
+@use './variables';
+
 $base: (
-  lt: $font-os-light,
-  lt-cd: $font-os-condensed-light,
-  rg: $font-os-regular,
-  sb: $font-os-semibold,
-  bd: $font-os-bold,
-  bd-cd: $font-os-condensed-bold,
-  eb: $font-os-extra-bold,
+  lt: variables.$font-os-light,
+  lt-cd: variables.$font-os-condensed-light,
+  rg: variables.$font-os-regular,
+  sb: variables.$font-os-semibold,
+  bd: variables.$font-os-bold,
+  bd-cd: variables.$font-os-condensed-bold,
+  eb: variables.$font-os-extra-bold,
 );
 
 $custom: (
-  rg: $font-hf-regular,
+  rg: variables.$font-hf-regular,
 );
 
 $weddings: (
-  rg: $font-bodoni-regular,
+  rg: variables.$font-bodoni-regular,
 );
 
 $font-families: (
@@ -24,5 +26,3 @@ $font-families: (
   custom: $custom,
   weddings: $weddings,
 );
-
-@include typography();

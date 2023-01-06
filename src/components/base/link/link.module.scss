@@ -1,7 +1,7 @@
 // Theme
 .default {
-  color: black;
-  // font-family: $font-os-semibold;
+  color: functions.color(black, df);
+  font-family: variables.$font-os-semibold;
   text-transform: uppercase;
 }
 

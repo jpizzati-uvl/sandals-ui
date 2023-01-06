@@ -2,11 +2,12 @@
 /*
 // Mixins
 // ------------------------------------------------ */
+@use './variables';
 
 // Media Query helper, uses the variables $queries map
 @mixin queries($key, $queries) {
   $query: map-get($queries, $key);
-  @if ($query == $defaultQuery) {
+  @if ($query == variables.$defaultQuery) {
     @content;
   } @else {
     @media (min-width: #{$query}) {
@@ -17,8 +18,8 @@
 
 // Media Query helper, uses the $breakpoints map
 @mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+  @if map-has-key(variables.$breakpoints, $breakpoint) {
+    @media (min-width: #{map-get(variables.$breakpoints, $breakpoint)}) {
       @content;
     }
   } @else {
@@ -52,13 +53,13 @@
 }
 
 // Spacing class generation - DO NOT MODIFY
-@mixin spacing() {
-  @each $size in $sizes {
-    @for $spacing-size from 0 through $spacing-max-size {
+@mixin spacing($spacing) {
+  @each $size in variables.$sizes {
+    @for $spacing-size from 0 through variables.$spacing-max-size {
       @each $spacing-name, $group in $spacing {
         @each $group-name in $group {
           .#{$size}\:#{$group-name}-#{$spacing-size} {
-            @include queries($size, $queries) {
+            @include queries($size, variables.$queries) {
               // Padding
               @if $group-name == "p" {
                 padding: (calc($spacing-size/10) + rem);
@@ -125,7 +126,7 @@
 }
 
 // Typography class generation - DO NOT MODIFY
-@mixin typography() {
+@mixin typography($font-families) {
   @each $family-name, $group in $font-families {
     @each $group-name, $font-name in $group {
       .ff-#{$family-name}-#{"" + $group-name} {
@@ -134,26 +135,26 @@
     }
   }
 
-  @each $size in $sizes {
-    @for $font-size from 0 through $font-max-size {
+  @each $size in variables.$sizes {
+    @for $font-size from 0 through variables.$font-max-size {
       .#{$size}\:fs-#{$font-size} {
-        @include queries($size, $queries) {
+        @include queries($size, variables.$queries) {
           font-size: calc($font-size / 10) + rem;
         }
       }
     }
 
-    @for $font-tracking from 0 through $font-max-tracking {
+    @for $font-tracking from 0 through variables.$font-max-tracking {
       .#{$size}\:ls-#{$font-tracking} {
-        @include queries($size, $queries) {
+        @include queries($size, variables.$queries) {
           letter-spacing: calc($font-tracking / 100) + rem;
         }
       }
     }
 
-    @for $font-leading from 0 through $font-max-leading {
+    @for $font-leading from 0 through variables.$font-max-leading {
       .#{$size}\:lh-#{$font-leading} {
-        @include queries($size, $queries) {
+        @include queries($size, variables.$queries) {
           line-height: calc($font-leading / 10) + rem;
         }
       }
@@ -173,7 +174,7 @@
 }
 
 // Color class generation - DO NOT MODIFY
-@mixin color() {
+@mixin color($colors) {
   @each $color-name, $group in $colors {
     @each $group-name, $color-hex in $group {
       @if length($group) > 1 {
@@ -189,7 +190,7 @@
   }
 }
 
-@mixin background-color() {
+@mixin background-color($colors) {
   @each $color-name, $group in $colors {
     @each $group-name, $color-hex in $group {
       @if length($group) > 1 {
@@ -205,7 +206,7 @@
   }
 }
 
-@mixin background-gradient() {
+@mixin background-gradient($gradients) {
   @each $color-name, $group in $gradients {
     .bg-#{"" + $color-name} {
       @include gradient-vertical(nth($group, 1), nth($group, 2));

@@ -1,19 +1,16 @@
 // Needed in order to import package.json after rollup 3 upgrade
 import { createRequire } from "node:module";
 
-// Uses the node resolution algorithm for modules
 import resolve from "@rollup/plugin-node-resolve";
 
 // Converts commonjs modules to ES6 modules
 import commonjs from "@rollup/plugin-commonjs";
 
-// Teaches rollup how to process Typescript files
+// Tells rollup how to process Typescript files
 import typescript from "@rollup/plugin-typescript";
 
 // CSS Processing
 import postcss from "rollup-plugin-postcss";
-
-import stringHash from "string-hash";
 import purgecss from "@fullhuman/postcss-purgecss";
 import autoprefixer from "autoprefixer";
 
@@ -75,24 +72,15 @@ export default [
         extract: false,
         modules: {
           generateScopedName: "[hash:base64:5]",
-          // generateScopedName: function (name, filename, css) {
-          //   console.log(filename);
-          //   if (!filename.includes(".module")) return name;
-
-          //   const i = css.indexOf(`.${name}`);
-          //   const lineNumber = css.substr(0, i).split(/[\r\n]/).length;
-          //   const hash = stringHash(css).toString(36).substr(0, 5);
-
-          //   return `${hash}_${lineNumber}`;
-          // },
         },
+        autoModules: false,
         sourceMap: true,
         minimize: true,
         use: [
           [
             "sass",
             {
-              data: '@import "./src/styles/abstracts/variables", "./src/styles/abstracts/mixins";',
+              data: "@use './src/styles/abstracts/mixins'; @use './src/styles/abstracts/functions'; @use './src/styles/abstracts/variables';",
             },
           ],
         ],

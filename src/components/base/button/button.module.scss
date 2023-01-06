@@ -1,13 +1,11 @@
-// Theme
 .default {
-  background: color(black, df);
-  color: color(white, df);
-  font-family: $font-os-bold;
+  background: functions.color(black, df);
+  color: functions.color(white, df);
+  font-family: variables.$font-os-bold;
   text-transform: uppercase;
-  @include fadeIn();
+  @include mixins.fadeIn();
 }
 
-// Size
 .xs {
   font-size: 1.2rem;
   line-height: 3rem;

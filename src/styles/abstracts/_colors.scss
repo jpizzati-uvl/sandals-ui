@@ -1,6 +1,7 @@
 /*
 // Colors Abstract -- DO NOT MODIFY
 // ------------------------------------------------ */
+@use './mixins';
 
 // Colors
 $black: (
@@ -63,7 +64,3 @@ $colors: (
 $gradients: (
   teal-gt: $tealGt,
 );
-
-@include color;
-@include background-color;
-@include background-gradient;

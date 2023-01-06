@@ -4,3 +4,11 @@
 
 @import "./default/grid", "./default/basic", "./default/utils",
   "./default/fonts", "./default/icons";
+
+:global {
+  @include color($colors);
+  @include background-color($colors);
+  @include background-gradient($gradients);
+  @include typography($font-families);
+  @include spacing($spacing);
+}
