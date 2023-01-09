@@ -1,43 +1,40 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-// import { Base } from "../base";
-import { Button } from "./button";
+import { Link } from "./link";
 
 export default {
-  title: "Base/Button",
+  title: "Base/Link",
   parameters: {},
-  component: Button,
-} as ComponentMeta<typeof Button>;
+  component: Link,
+} as ComponentMeta<typeof Link>;
 
-const Template: ComponentStory<typeof Button> = (args) => (
-  // <Base>
+const Template: ComponentStory<typeof Link> = (args) => (
   <div className="container">
     <div className="row center-xs">
       <div className="xs-12">
-        <Button {...args} />
+        <Link {...args} />
       </div>
     </div>
   </div>
-  // </Base>
 );
 
-export const buttonXS = Template.bind({});
-buttonXS.args = {
-  label: "Button XS",
+export const linkXS = Template.bind({});
+linkXS.args = {
+  label: "Link XS",
   size: "xs",
-  onClick: () => alert("You clicked on Default Button XS"),
+  onClick: () => alert("You clicked on Default Link XS"),
 };
 
-export const buttonSM = Template.bind({});
-buttonSM.args = {
-  label: "Button SM",
+export const linkSM = Template.bind({});
+linkSM.args = {
+  label: "Link SM",
   size: "sm",
-  onClick: () => alert("You clicked on Default Button SM"),
+  onClick: () => alert("You clicked on Default Link SM"),
 };
 
-export const buttonLG = Template.bind({});
-buttonLG.args = {
-  label: "Button LG",
+export const linkLG = Template.bind({});
+linkLG.args = {
+  label: "Link LG",
   size: "lg",
-  onClick: () => alert("You clicked on Default Button LG"),
+  onClick: () => alert("You clicked on Default Link LG"),
 };

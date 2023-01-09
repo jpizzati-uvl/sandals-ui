@@ -2,6 +2,8 @@
 // Variables -- DO NOT MODIFY
 // ------------------------------------------------ */
 
+@use './../abstracts/functions';
+
 /*==== Paths ====*/
 $cdn-url: "https://cdn.sandals.com/sandals/sandals-ui"; // Production
 $path: (
@@ -11,7 +13,7 @@ $path: (
 );
 
 /*==== Scaffolding ====*/
-$link-color: color(black, df) !default;
+$link-color: functions.color(black, df) !default;
 $link-hover-decoration: none !default;
 $transition-duration: 0.5s;
 $transition-style: ease-in-out;
@@ -46,7 +48,7 @@ $font-arial: Arial, Helvetica, sans-serif !default;
 
 // Default Font
 $font-base: $font-os-regular !default;
-$font-color: color(black, df) !default;
+$font-color: functions.color(black, df) !default;
 $font-weight: 400 !default;
 $font-size: 1.5rem !default;
 $line-height: 2rem !default;

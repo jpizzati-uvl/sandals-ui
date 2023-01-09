@@ -1,6 +1,5 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-// import { Base } from "../base";
 import { Button } from "./button";
 
 export default {
@@ -10,7 +9,6 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => (
-  // <Base>
   <div className="container">
     <div className="row center-xs">
       <div className="xs-12">
@@ -18,7 +16,6 @@ const Template: ComponentStory<typeof Button> = (args) => (
       </div>
     </div>
   </div>
-  // </Base>
 );
 
 export const buttonXS = Template.bind({});

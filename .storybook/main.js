@@ -7,15 +7,15 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     {
-      name: `@storybook/preset-scss`,
+      name: "@storybook/preset-scss",
       options: {
-        rule: {
-          test: /\.s[ca]ss$/,
+        sassLoaderOptions: {
+          additionalData:
+            "@use './src/styles/abstracts/mixins'; @use './src/styles/abstracts/functions'; @use './src/styles/abstracts/variables';",
         },
         cssLoaderOptions: {
           modules: {
-            localIdentName: "[local]",
-            // localIdentName: "[hash:base64:5]",
+            localIdentName: "[name]__[local]",
           },
         },
       },

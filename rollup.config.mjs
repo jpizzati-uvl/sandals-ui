@@ -11,7 +11,7 @@ import typescript from "@rollup/plugin-typescript";
 
 // CSS Processing
 import postcss from "rollup-plugin-postcss";
-import purgecss from "@fullhuman/postcss-purgecss";
+// import purgecss from "@fullhuman/postcss-purgecss";
 import autoprefixer from "autoprefixer";
 
 // rollup your .d.ts files
