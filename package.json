@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/jpizzati-uvl"
   },
-  "version": "0.1.35-alpha",
+  "version": "0.1.36-alpha",
   "description": "The official Sandals UI Component Library",
   "author": "Jorge Pizzati",
   "license": "ISC",
@@ -14,7 +14,7 @@
     "build-storybook": "build-storybook"
   },
   "lint-staged": {
-    "./**/*.{js,jsx}": [
+    "./**/*.{ts,tsx}": [
       "prettier --write",
       "eslint --cache . --fix"
     ],
