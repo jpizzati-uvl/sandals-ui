@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/jpizzati-uvl"
   },
-  "version": "0.1.31-alpha",
+  "version": "0.1.32-alpha",
   "description": "The official Sandals UI Component Library",
   "author": "Jorge Pizzati",
   "license": "ISC",
@@ -15,7 +15,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "test"
     }
   },
   "devDependencies": {
