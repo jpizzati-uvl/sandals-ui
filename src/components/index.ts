@@ -1,4 +1,4 @@
-import "../styles/master.scss";
+import '../styles/master.scss';
 
-export { Button } from "./base/button";
-export { Link } from "./base/link";
+export { Button } from './base/button';
+export { Link } from './base/link';

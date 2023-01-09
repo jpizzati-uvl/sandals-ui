@@ -1,14 +1,14 @@
-import React from "react";
-import style from "./button.module.scss";
+import React from 'react';
+import style from './button.module.scss';
 
 export interface ButtonProps {
-  /*** Support multiple styles i.e. weddings */
+  /** * Support multiple styles i.e. weddings */
   theme?: string;
-  /*** Call to action */
+  /** * Call to action */
   label: string;
-  /*** Different sized buttons */
+  /** * Different sized buttons */
   size?: string;
-  /*** Optional click handler */
+  /** * Optional click handler */
   onClick?: () => void;
 }
 
@@ -16,9 +16,9 @@ export interface ButtonProps {
  * Primary UI component for user interaction
  */
 export const Button = ({
-  theme = "default",
+  theme = 'default',
   label,
-  size = "xs",
+  size = 'xs',
   onClick,
   ...props
 }: ButtonProps) => {

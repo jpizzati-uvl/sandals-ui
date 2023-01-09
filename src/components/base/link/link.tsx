@@ -1,16 +1,16 @@
-import React from "react";
-import style from "./link.module.scss";
+import React from 'react';
+import style from './link.module.scss';
 
 export interface LinkProps {
-  /*** Support multiple styles i.e. weddings */
+  /** * Support multiple styles i.e. weddings, specials */
   theme?: string;
-  /*** Call to action */
+  /** * Call to action */
   label: string;
-  /*** Link to page, # if trigger */
-  href: string;
-  /*** Different sized buttons */
+  /** * Link to page, # if trigger */
+  href?: string;
+  /** * Different sized buttons */
   size?: string;
-  /*** Optional click handler */
+  /** * Optional click handler */
   onClick?: () => void;
 }
 
@@ -18,11 +18,9 @@ export interface LinkProps {
  * Primary UI component for user interaction
  */
 export const Link = ({
-  theme = "default",
+  theme = 'default',
   label,
-  href,
-  size = "xs",
-  onClick,
+  size = 'xs',
   ...props
 }: LinkProps) => {
   return (
