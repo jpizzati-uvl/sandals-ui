@@ -32,14 +32,16 @@ export default [
     external: ['react-dom'],
     output: [
       {
-        dir: packageJson.main,
-        preserveModules: true,
+        file: packageJson.main,
+        // dir: packageJson.main,
+        // preserveModules: true,
         format: 'cjs',
         sourcemap: true,
       },
       {
-        dir: packageJson.module,
-        preserveModules: true,
+        file: packageJson.module,
+        // dir: packageJson.module,
+        // preserveModules: true,
         format: 'esm',
         sourcemap: true,
       },
@@ -74,7 +76,7 @@ export default [
     ],
   },
   {
-    input: 'dist/types/index.d.ts',
+    input: 'dist/esm/types/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
     external: [/\.(css|less|scss)$/],

@@ -3,12 +3,13 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/jpizzati-uvl"
   },
-  "version": "0.1.42-alpha",
+  "version": "0.1.43-alpha",
   "description": "The official Sandals UI Component Library",
   "author": "Jorge Pizzati",
   "license": "ISC",
   "scripts": {
-    "rollup": "tsc --outDir dist --declarationDir dist/types --declaration true --emitDeclarationOnly true && rollup -c",
+    "build": "tsc --outDir dist --declarationDir dist/esm/types --declaration true --emitDeclarationOnly true && rollup -c",
+    "rollup": "rollup -c",
     "test": "jest",
     "dev": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
