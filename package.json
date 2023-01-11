@@ -3,12 +3,12 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/jpizzati-uvl"
   },
-  "version": "0.1.41-alpha",
+  "version": "0.1.42-alpha",
   "description": "The official Sandals UI Component Library",
   "author": "Jorge Pizzati",
   "license": "ISC",
   "scripts": {
-    "rollup": "rollup -c",
+    "rollup": "tsc --outDir dist --declarationDir dist/types --declaration true --emitDeclarationOnly true && rollup -c",
     "test": "jest",
     "dev": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -75,6 +75,7 @@
     "rollup-plugin-dts": "^5.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "storybook-dark-mode": "^2.0.5",
