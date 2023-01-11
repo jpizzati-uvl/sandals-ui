@@ -29,14 +29,19 @@ const packageJson = require('./package.json');
 export default [
   {
     input: 'src/index.ts', // Entry point from where we export all modules
+    external: ['react-dom'],
     output: [
       {
-        file: packageJson.main,
+        // file: packageJson.main,
+        dir: packageJson.main,
+        preserveModules: true,
         format: 'cjs',
         sourcemap: true,
       },
       {
-        file: packageJson.module,
+        // file: packageJson.module,
+        dir: packageJson.module,
+        preserveModules: true,
         format: 'esm',
         sourcemap: true,
       },
@@ -50,25 +55,7 @@ export default [
         exclude: ['**/*.test.tsx', '**/*.stories.tsx'],
       }),
       postcss({
-        plugins: [
-          autoprefixer(),
-          // purgecss({
-          //   content: ["./src/**/*.tsx", "./src/**/*.ts"],
-          //   safelist: [
-          //     // Scaffolding
-          //     /^xs/,
-          //     /^sm/,
-          //     /^md/,
-          //     /^lg/,
-          //     /^xl/,
-          //     /^xxl/,
-          //     // Fonts
-          //     /^fc-/,
-          //     // Backgrounds
-          //     /^bg-/,
-          //   ],
-          // }),
-        ],
+        plugins: [autoprefixer()],
         extract: false,
         modules: {
           generateScopedName: '[hash:base64:5]',

@@ -1,8 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import loadable from '@loadable/component';
-
-const Button = loadable(() => import('./'));
+import { Button } from './button';
 
 export default {
   title: 'Base/Button',

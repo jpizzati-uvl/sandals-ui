@@ -10,19 +10,12 @@
     // Added
     "jsx": "react",
     "module": "ESNext",
-    "declaration": true,
-    "declarationDir": "types",
+    // "declaration": true,
+    // "declarationDir": "types",
     "sourceMap": true,
-    "outDir": "dist",
+    // "outDir": "dist",
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "emitDeclarationOnly": true
-  },
-
-  "exclude": [
-    "dist",
-    "node_modules",
-    "src/**/*.test.tsx",
-    "src/**/*.stories.tsx"
-  ]
+    "allowSyntheticDefaultImports": true
+    // "emitDeclarationOnly": true
+  }
 }
