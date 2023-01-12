@@ -10,9 +10,9 @@
     // Added
     "jsx": "react",
     "module": "ESNext",
-    // "declaration": true,
-    // "emitDeclarationOnly": true,
-    // "outDir": "lib/cjs/src",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "lib/src",
     "sourceMap": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true

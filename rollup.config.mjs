@@ -38,13 +38,8 @@ export default [
     external: ['react-dom'],
     output: [
       {
-        dir: 'lib/cjs',
+        dir: 'lib',
         format: 'cjs',
-        ...outputOptions,
-      },
-      {
-        dir: 'lib/esm',
-        format: 'esm',
         ...outputOptions,
       },
     ],
@@ -83,7 +78,7 @@ export default [
     ],
   },
   {
-    input: 'lib/esm/src/index.d.ts',
+    input: 'lib/src/index.d.ts',
     output: [{ file: 'lib/index.d.ts', format: 'esm' }],
     plugins: [dts()],
     external: [/\.(css|less|scss)$/],
