@@ -12,7 +12,7 @@
     "module": "ESNext",
     "declaration": true,
     "emitDeclarationOnly": true,
-    "outDir": "lib/src",
+    "outDir": "lib/src/types",
     "sourceMap": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
