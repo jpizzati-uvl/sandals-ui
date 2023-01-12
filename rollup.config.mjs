@@ -65,7 +65,7 @@ export default [
       }),
       postcss({
         plugins: [autoprefixer()],
-        extract: false,
+        extract: true,
         modules: {
           generateScopedName: '[hash:base64:5]',
         },
