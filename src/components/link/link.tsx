@@ -17,15 +17,15 @@ export interface LinkProps {
 /**
  * Primary UI component for user interaction
  */
-export const Link = ({
+export default function Link({
   theme = 'default',
   label,
   size = 'xs',
   ...props
-}: LinkProps) => {
+}: LinkProps) {
   return (
     <a {...props} className={`${style[theme]} ${style[size]}`}>
       {label}
     </a>
   );
-};
+}

@@ -1,5 +1,5 @@
 // Needed in order to import package.json after rollup 3 upgrade
-import { createRequire } from 'node:module';
+// import { createRequire } from 'node:module';
 
 import resolve from '@rollup/plugin-node-resolve';
 
@@ -23,8 +23,21 @@ import terser from '@rollup/plugin-terser';
 // Prevents module duplication
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
-const require = createRequire(import.meta.url);
-const packageJson = require('./package.json');
+// Generate bundle stats
+import analyze from 'rollup-plugin-analyzer';
+
+// const require = createRequire(import.meta.url);
+// const packageJson = require('./package.json');
+
+const outputOptions = {
+  exports: 'named',
+  preserveModules: true,
+  sourcemap: true,
+  banner: `/*
+ * Library Boilerplate
+ * DEV: Jorge Pizzati (@jpizzati-uvl)
+ */`,
+};
 
 export default [
   {
@@ -32,19 +45,15 @@ export default [
     external: ['react-dom'],
     output: [
       {
-        file: packageJson.main,
-        // dir: packageJson.main,
-        // preserveModules: true,
+        dir: 'dist/cjs',
         format: 'cjs',
-        sourcemap: true,
+        ...outputOptions,
       },
-      {
-        file: packageJson.module,
-        // dir: packageJson.module,
-        // preserveModules: true,
-        format: 'esm',
-        sourcemap: true,
-      },
+      // {
+      //   dir: 'dist/esm',
+      //   format: 'esm',
+      //   ...outputOptions,
+      // },
     ],
     plugins: [
       peerDepsExternal(),
@@ -73,10 +82,15 @@ export default [
         ],
       }),
       terser(),
+      analyze({
+        hideDeps: true,
+        limit: 0,
+        summaryOnly: true,
+      }),
     ],
   },
   {
-    input: 'dist/esm/types/index.d.ts',
+    input: 'dist/cjs/src/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
     external: [/\.(css|less|scss)$/],

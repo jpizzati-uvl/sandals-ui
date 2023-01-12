@@ -1,4 +1,4 @@
 import '../styles/master.scss';
 
-export { Button } from './button';
-export { Link } from './link';
+export { default as Button } from './button';
+export { default as Link } from './link';

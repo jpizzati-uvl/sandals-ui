@@ -11,9 +11,9 @@
     "jsx": "react",
     "module": "ESNext",
     "declaration": true,
-    "declarationDir": "types",
+    // "declarationDir": "dist",
     "emitDeclarationOnly": true,
-    "outDir": "dist",
+    "outDir": "dist/cjs/src",
     "sourceMap": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
