@@ -9,6 +9,7 @@ import typescript from '@rollup/plugin-typescript';
 // CSS Processing
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
+import copy from 'rollup-plugin-copy';
 
 // rollup your .d.ts files
 import dts from 'rollup-plugin-dts';
@@ -53,7 +54,7 @@ export default [
       }),
       postcss({
         plugins: [autoprefixer()],
-        extract: true,
+        extract: false,
         modules: {
           generateScopedName: '[hash:base64:5]',
         },
@@ -68,6 +69,9 @@ export default [
             },
           ],
         ],
+      }),
+      copy({
+        targets: [{ src: 'src/styles', dest: 'lib' }],
       }),
       terser(),
       analyze({

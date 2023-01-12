@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/jpizzati-uvl"
   },
-  "version": "0.1.51-alpha",
+  "version": "0.1.52-alpha",
   "description": "The official Sandals UI Component Library",
   "author": "Jorge Pizzati",
   "license": "ISC",
@@ -73,6 +73,7 @@
     "react-dom": "^18.2.0",
     "rollup": "^3.3.0",
     "rollup-plugin-analyzer": "^4.0.0",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-dts": "^5.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
