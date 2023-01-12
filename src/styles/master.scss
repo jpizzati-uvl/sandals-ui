@@ -1,9 +1,9 @@
-@import "./abstracts/normalize", "./abstracts/mixins", "./abstracts/functions",
-  "./abstracts/colors", "./abstracts/variables", "./abstracts/spacing",
-  "./abstracts/typography";
+@import './abstracts/normalize', './abstracts/mixins', './abstracts/functions',
+  './abstracts/colors', './abstracts/variables', './abstracts/spacing',
+  './abstracts/typography';
 
-@import "./default/grid", "./default/basic", "./default/utils",
-  "./default/fonts", "./default/icons";
+@import './default/grid', './default/basic', './default/utils',
+  './default/fonts', './default/icons';
 
 :global {
   @include color($colors);
@@ -12,17 +12,3 @@
   @include typography($font-families);
   @include spacing($spacing);
 }
-
-// @use './abstracts/normalize';
-// @use './abstracts/mixins';
-// @use './abstracts/functions';
-// @use './abstracts/colors';
-// @use './abstracts/variables';
-// @use './abstracts/spacing';
-// @use './abstracts/typography';
-
-// @use './default/grid';
-// @use './default/basic';
-// @use './default/utils';
-// @use './default/fonts';
-// @use './default/icons';

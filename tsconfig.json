@@ -11,7 +11,7 @@
     "jsx": "react",
     "module": "ESNext",
     "declaration": true,
-    "declarationDir": "dist/types",
+    "declarationDir": "types",
     "emitDeclarationOnly": true,
     "outDir": "dist",
     "sourceMap": true,
