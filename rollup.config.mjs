@@ -1,6 +1,3 @@
-// Needed in order to import package.json after rollup 3 upgrade
-// import { createRequire } from 'node:module';
-
 import resolve from '@rollup/plugin-node-resolve';
 
 // Converts commonjs modules to ES6 modules
@@ -11,7 +8,6 @@ import typescript from '@rollup/plugin-typescript';
 
 // CSS Processing
 import postcss from 'rollup-plugin-postcss';
-// import purgecss from "@fullhuman/postcss-purgecss";
 import autoprefixer from 'autoprefixer';
 
 // rollup your .d.ts files
@@ -26,16 +22,13 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 // Generate bundle stats
 import analyze from 'rollup-plugin-analyzer';
 
-// const require = createRequire(import.meta.url);
-// const packageJson = require('./package.json');
-
 const outputOptions = {
   exports: 'named',
   preserveModules: true,
   sourcemap: true,
   banner: `/*
  * Library Boilerplate
- * DEV: Jorge Pizzati (@jpizzati-uvl)
+ * Dev: Jorge Pizzati (@jpizzati-uvl)
  */`,
 };
 
@@ -45,20 +38,20 @@ export default [
     external: ['react-dom'],
     output: [
       {
-        dir: 'dist/cjs',
+        dir: 'lib/cjs',
         format: 'cjs',
         ...outputOptions,
       },
-      // {
-      //   dir: 'dist/esm',
-      //   format: 'esm',
-      //   ...outputOptions,
-      // },
+      {
+        dir: 'lib/esm',
+        format: 'esm',
+        ...outputOptions,
+      },
     ],
     plugins: [
       peerDepsExternal(),
       resolve(),
-      commonjs(),
+      commonjs({ extensions: ['.js', '.ts'] }),
       typescript({
         tsconfig: './tsconfig.json',
         exclude: ['**/*.test.tsx', '**/*.stories.tsx'],
@@ -90,8 +83,8 @@ export default [
     ],
   },
   {
-    input: 'dist/cjs/src/index.d.ts',
-    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    input: 'lib/esm/src/index.d.ts',
+    output: [{ file: 'lib/index.d.ts', format: 'esm' }],
     plugins: [dts()],
     external: [/\.(css|less|scss)$/],
   },

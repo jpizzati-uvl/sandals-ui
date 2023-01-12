@@ -3,12 +3,15 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/jpizzati-uvl"
   },
-  "version": "0.1.48-alpha",
+  "version": "0.1.49-alpha",
   "description": "The official Sandals UI Component Library",
   "author": "Jorge Pizzati",
   "license": "ISC",
   "scripts": {
+    "tsc-cjs": "tsc --outDir lib/cjs/src --declaration true --emitDeclarationOnly true",
+    "tsc-esm": "tsc --outDir lib/esm/src --declaration true --emitDeclarationOnly true",
     "rollup": "rollup -c",
+    "build": "yarn tsc-cjs && yarn tsc-esm && yarn rollup",
     "test": "jest",
     "dev": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -91,11 +94,11 @@
   "peerDependencies": {
     "react": "^18.2.0"
   },
-  "main": "dist/cjs/src/index.js",
-  "module": "dist/esm/src/index.js",
+  "main": "lib/cjs/src/index.js",
+  "module": "lib/esm/src/index.js",
   "files": [
-    "dist"
+    "lib"
   ],
-  "types": "dist/index.d.ts",
+  "types": "lib/index.d.ts",
   "dependencies": {}
 }
