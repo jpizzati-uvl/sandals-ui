@@ -2,12 +2,12 @@
 /*
 // Mixins
 // ------------------------------------------------ */
-@use './variables';
+// @use './variables';
 
 // Media Query helper, uses the variables $queries map
 @mixin queries($key, $queries) {
   $query: map-get($queries, $key);
-  @if ($query == variables.$defaultQuery) {
+  @if ($query == $defaultQuery) {
     @content;
   } @else {
     @media (min-width: #{$query}) {
@@ -18,8 +18,8 @@
 
 // Media Query helper, uses the $breakpoints map
 @mixin respond-to($breakpoint) {
-  @if map-has-key(variables.$breakpoints, $breakpoint) {
-    @media (min-width: #{map-get(variables.$breakpoints, $breakpoint)}) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
       @content;
     }
   } @else {
@@ -54,12 +54,12 @@
 
 // Spacing class generation - DO NOT MODIFY
 @mixin spacing($spacing) {
-  @each $size in variables.$sizes {
-    @for $spacing-size from 0 through variables.$spacing-max-size {
+  @each $size in $sizes {
+    @for $spacing-size from 0 through $spacing-max-size {
       @each $spacing-name, $group in $spacing {
         @each $group-name in $group {
           .#{$size}\:#{$group-name}-#{$spacing-size} {
-            @include queries($size, variables.$queries) {
+            @include queries($size, $queries) {
               // Padding
               @if $group-name == "p" {
                 padding: (calc($spacing-size/10) + rem);
@@ -135,26 +135,26 @@
     }
   }
 
-  @each $size in variables.$sizes {
-    @for $font-size from 0 through variables.$font-max-size {
+  @each $size in $sizes {
+    @for $font-size from 0 through $font-max-size {
       .#{$size}\:fs-#{$font-size} {
-        @include queries($size, variables.$queries) {
+        @include queries($size, $queries) {
           font-size: calc($font-size / 10) + rem;
         }
       }
     }
 
-    @for $font-tracking from 0 through variables.$font-max-tracking {
+    @for $font-tracking from 0 through $font-max-tracking {
       .#{$size}\:ls-#{$font-tracking} {
-        @include queries($size, variables.$queries) {
+        @include queries($size, $queries) {
           letter-spacing: calc($font-tracking / 100) + rem;
         }
       }
     }
 
-    @for $font-leading from 0 through variables.$font-max-leading {
+    @for $font-leading from 0 through $font-max-leading {
       .#{$size}\:lh-#{$font-leading} {
-        @include queries($size, variables.$queries) {
+        @include queries($size, $queries) {
           line-height: calc($font-leading / 10) + rem;
         }
       }

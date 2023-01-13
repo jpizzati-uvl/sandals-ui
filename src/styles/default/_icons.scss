@@ -1,12 +1,12 @@
 /*
 // Font Icons
 // ------------------------------------------------ */
-@use './../abstracts/variables';
+// @use './../abstracts/variables';
 
-:global {
+// :global {
   [class^='ic-'],
   [class*=' ic-'] {
-    font-family: variables.$font-icons !important;
+    font-family: $font-icons !important;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -16,4 +16,5 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-}
+
+// }

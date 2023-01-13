@@ -1,19 +1,20 @@
+/* stylelint-disable */
 /*
 // Variables -- DO NOT MODIFY
 // ------------------------------------------------ */
 
-@use './../abstracts/functions';
+@import './../abstracts/functions';
 
 /*==== Paths ====*/
-$cdn-url: "https://cdn.sandals.com/sandals/sandals-ui"; // Production
+$cdn-url: 'https://cdn.sandals.com/sandals/sandals-ui'; // Production
 $path: (
-  images: "#{$cdn-url}/uploads",
-  fonts: "#{$cdn-url}/fonts",
-  svg: "#{$cdn-url}/svg",
+  images: '#{$cdn-url}/uploads',
+  fonts: '#{$cdn-url}/fonts',
+  svg: '#{$cdn-url}/svg',
 );
 
 /*==== Scaffolding ====*/
-$link-color: functions.color(black, df) !default;
+$link-color: color(black, df) !default;
 $link-hover-decoration: none !default;
 $transition-duration: 0.5s;
 $transition-style: ease-in-out;
@@ -23,32 +24,32 @@ $divisor: #80808038;
 $font-max-size: 100;
 $font-max-tracking: 100;
 $font-max-leading: 100;
-$font-cache: "v=#{unique-id()}";
+$font-cache: 'v=#{unique-id()}';
 
 // Sandals Icons Font
-$font-icons: "sandals-icons-font" !default;
+$font-icons: 'sandals-icons-font' !default;
 
 // Open Sans Font
-$font-os-light: "OpenSans-Light" !default;
-$font-os-regular: "OpenSans-Regular" !default;
-$font-os-semibold: "OpenSans-Semibold" !default;
-$font-os-bold: "OpenSans-Bold" !default;
-$font-os-extra-bold: "OpenSans-ExtraBold" !default;
-$font-os-condensed-bold: "OpenSansCondensed-Bold" !default;
-$font-os-condensed-light: "OpenSansCondensed-Light" !default;
+$font-os-light: 'OpenSans-Light' !default;
+$font-os-regular: 'OpenSans-Regular' !default;
+$font-os-semibold: 'OpenSans-Semibold' !default;
+$font-os-bold: 'OpenSans-Bold' !default;
+$font-os-extra-bold: 'OpenSans-ExtraBold' !default;
+$font-os-condensed-bold: 'OpenSansCondensed-Bold' !default;
+$font-os-condensed-light: 'OpenSansCondensed-Light' !default;
 
 // Bodoni Font
-$font-bodoni-regular: "Bodoni-Regular" !default;
+$font-bodoni-regular: 'Bodoni-Regular' !default;
 
 // Happy Feet Font
-$font-hf-regular: "HappyFeet-Regular" !default;
+$font-hf-regular: 'HappyFeet-Regular' !default;
 
 // Fallback Font
 $font-arial: Arial, Helvetica, sans-serif !default;
 
 // Default Font
 $font-base: $font-os-regular !default;
-$font-color: functions.color(black, df) !default;
+$font-color: color(black, df) !default;
 $font-weight: 400 !default;
 $font-size: 1.5rem !default;
 $line-height: 2rem !default;
@@ -104,12 +105,12 @@ $viewport-lg: map-get($breakpoints, lg-min) !default;
 $viewport-xl: map-get($breakpoints, xl-min) !default;
 $viewport-xxl: map-get($breakpoints, xxl-min) !default;
 
-$xs: "xs" !default;
-$sm: "sm" !default;
-$md: "md" !default;
-$lg: "lg" !default;
-$xl: "xl" !default;
-$xxl: "xxl" !default;
+$xs: 'xs' !default;
+$sm: 'sm' !default;
+$md: 'md' !default;
+$lg: 'lg' !default;
+$xl: 'xl' !default;
+$xxl: 'xxl' !default;
 
 $defaultQuery: $viewport-xs !default;
 $sizes: $xs $sm $md $lg $xl $xxl !default;

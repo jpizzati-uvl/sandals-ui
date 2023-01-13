@@ -1,7 +1,8 @@
+/* stylelint-disable */
 /*
 // Functions
 // ------------------------------------------------ */
-@use './colors';
+@import './colors';
 
 // Normalizing the use of z-index
 @function z($key) {
@@ -15,9 +16,9 @@
 
 // usage: color("name_of_color", "type_of_color")
 // to avoid to repeating map-get($colors, ...)
-@function color($color, $type: "default") {
-  @if map-has-key(colors.$colors, $color) {
-    $curr_color: map-get(colors.$colors, $color);
+@function color($color, $type: 'default') {
+  @if map-has-key($colors, $color) {
+    $curr_color: map-get($colors, $color);
     @if map-has-key($curr_color, $type) {
       @return map-get($curr_color, $type);
     }
@@ -42,7 +43,7 @@
 /// @param {String} $search - Substring to replace
 /// @param {String} $replace ('') - New value
 /// @return {String} - Updated string
-@function str-replace($string, $search, $replace: "") {
+@function str-replace($string, $search, $replace: '') {
   @if type-of($string) != string {
     $string: quote($string);
   }

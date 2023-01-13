@@ -1,14 +1,11 @@
-@import './abstracts/normalize', './abstracts/mixins', './abstracts/functions',
-  './abstracts/colors', './abstracts/variables', './abstracts/spacing',
-  './abstracts/typography';
+@import './abstracts/normalize', './abstracts/variables', './abstracts/mixins',
+  './abstracts/spacing', './abstracts/typography';
 
 @import './default/grid', './default/basic', './default/utils',
   './default/fonts', './default/icons';
 
-:global {
-  @include color($colors);
-  @include background-color($colors);
-  @include background-gradient($gradients);
-  @include typography($font-families);
-  @include spacing($spacing);
-}
+@include color($colors);
+@include background-color($colors);
+@include background-gradient($gradients);
+@include spacing($spacing);
+@include typography($font-families);

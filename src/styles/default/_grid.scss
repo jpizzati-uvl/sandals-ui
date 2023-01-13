@@ -1,294 +1,295 @@
+/* stylelint-disable */
 /*
 // Grid System -- DO NOT MODIFY
 // Taken from https://github.com/kristoferjoseph/flexboxgrid/blob/sass/src/sass/flexboxgrid.scss
 // http://flexboxgrid.com/
 // ------------------------------------------------ */
-@use './../abstracts/variables';
-@use './../abstracts/mixins';
+// @use './../abstracts/variables';
+// @use './../abstracts/mixins';
 
-:global {
-  $column-count: 12 !default;
-  $column-selector: "." !default;
-  $offset-modifier: "offset" !default;
+// :global {
+$column-count: 12 !default;
+$column-selector: '.' !default;
+$offset-modifier: 'offset' !default;
 
-  $gutter-width: 1.5rem !default;
-  $outer-margin: 1.5rem !default;
-  $gutter-compensation: calc(($gutter-width) * -1) !default;
-  $half-gutter-width: calc($gutter-width / 2) !default;
+$gutter-width: 1.5rem !default;
+$outer-margin: 1.5rem !default;
+$gutter-compensation: calc(($gutter-width) * -1) !default;
+$half-gutter-width: calc($gutter-width / 2) !default;
 
-  $container-sm: #{variables.$width-sm}rem + $gutter-width !default;
-  $container-md: #{variables.$width-md}rem + $gutter-width !default;
-  $container-lg: #{variables.$width-lg}rem + $gutter-width !default;
-  $container-xl: #{variables.$width-xl}rem + $gutter-width !default;
+$container-sm: #{$width-sm}rem + $gutter-width !default;
+$container-md: #{$width-md}rem + $gutter-width !default;
+$container-lg: #{$width-lg}rem + $gutter-width !default;
+$container-xl: #{$width-xl}rem + $gutter-width !default;
 
-  $block-delimiter: "-" !default;
-  $element-delimiter: "-" !default;
-  $modifier-delimiter: "-" !default;
+$block-delimiter: '-' !default;
+$element-delimiter: '-' !default;
+$modifier-delimiter: '-' !default;
 
-  $column-properties: "flex-basis", "max-width" !default;
-  $offset-properties: "margin-left" !default;
+$column-properties: 'flex-basis', 'max-width' !default;
+$offset-properties: 'margin-left' !default;
 
-  @mixin autoWidth() {
-    flex-grow: 1;
-    flex-basis: 0;
-    max-width: 100%;
-  }
+@mixin autoWidth() {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
 
-  @mixin percentWidth($property, $columns, $count) {
-    #{$property}: calc((100% / $columns) * $count);
-  }
+@mixin percentWidth($property, $columns, $count) {
+  #{$property}: calc((100% / $columns) * $count);
+}
 
-  @mixin percentOffset($property, $columns, $count) {
-    $single-column-width: calc((100% / $columns) * 1);
-    #{$property}: $single-column-width * $count;
-  }
+@mixin percentOffset($property, $columns, $count) {
+  $single-column-width: calc((100% / $columns) * 1);
+  #{$property}: $single-column-width * $count;
+}
 
-  @mixin columns(
-    $selector: $column-selector,
-    $properties: $column-properties,
-    $columns: $column-count,
-    $queries: variables.$queries
-  ) {
-    @each $size in variables.$sizes {
-      $iterator-selector: "";
+@mixin columns(
+  $selector: $column-selector,
+  $properties: $column-properties,
+  $columns: $column-count,
+  $queries: $queries
+) {
+  @each $size in $sizes {
+    $iterator-selector: '';
 
+    @for $i from 0 through $columns {
+      @if ($i == 0) {
+        $iterator-selector: #{$selector}#{$size};
+      } @else {
+        $iterator-selector: #{$selector}#{$size}#{$modifier-delimiter}#{$i};
+      }
+
+      #{$iterator-selector} {
+        @extend %column;
+      }
+    }
+
+    @include queries($size, $queries) {
       @for $i from 0 through $columns {
         @if ($i == 0) {
-          $iterator-selector: #{$selector}#{$size};
-        } @else {
-          $iterator-selector: #{$selector}#{$size}#{$modifier-delimiter}#{$i};
-        }
-
-        #{$iterator-selector} {
-          @extend %column;
-        }
-      }
-
-      @include mixins.queries($size, $queries) {
-        @for $i from 0 through $columns {
-          @if ($i == 0) {
-            #{$selector}#{$size} {
-              @content;
-              @include autoWidth();
-            }
-          } @else {
-            #{$selector}#{$size}#{$modifier-delimiter}#{$i} {
-              @content;
-              @each $prop in $properties {
-                @include percentWidth($prop, $columns, $i);
-              }
-            }
+          #{$selector}#{$size} {
+            @content;
+            @include autoWidth();
           }
-        }
-      }
-    }
-  }
-
-  @mixin offsets(
-    $selector: $column-selector,
-    $modifier-selector: $offset-modifier,
-    $properties: $offset-properties,
-    $columns: $column-count,
-    $queries: variables.$queries
-  ) {
-    @each $size in variables.$sizes {
-      @for $i from 1 through $columns {
-        #{$selector}#{$size}#{$modifier-delimiter}#{$modifier-selector}#{$modifier-delimiter}#{$i} {
-          @extend %column;
-        }
-      }
-
-      @include mixins.queries($size, $queries) {
-        @for $i from 0 through $columns {
-          #{$selector}#{$size}#{$modifier-delimiter}#{$modifier-selector}#{$modifier-delimiter}#{$i} {
+        } @else {
+          #{$selector}#{$size}#{$modifier-delimiter}#{$i} {
             @content;
             @each $prop in $properties {
-              @include percentOffset($prop, $columns, $i);
+              @include percentWidth($prop, $columns, $i);
             }
-          }
-        }
-      }
-    }
-  }
-
-  @mixin breakpoints($selector, $queries: variables.$queries) {
-    @each $size in variables.$sizes {
-      #{$selector}#{$modifier-delimiter}#{$size} {
-        @include mixins.queries($size, variables.$queries) {
-          @content;
-        }
-      }
-    }
-  }
-
-  .container-fluid,
-  .container {
-    box-sizing: border-box;
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $outer-margin;
-    padding-left: $outer-margin;
-  }
-
-  .container {
-    @include mixins.respond-to(sm-min) {
-      width: variables.$container-width-sm;
-    }
-
-    @include mixins.respond-to(md-min) {
-      width: variables.$container-width-md;
-    }
-
-    @include mixins.respond-to(lg-min) {
-      width: variables.$container-width-lg;
-    }
-
-    @include mixins.respond-to(xxl-min) {
-      &-xl {
-        width: variables.$container-width-xxl;
-      }
-    }
-  }
-
-  .row {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-right: $gutter-compensation;
-    margin-left: $gutter-compensation;
-  }
-
-  %column {
-    position: relative;
-    box-sizing: border-box;
-    flex-grow: 0;
-    flex-shrink: 0;
-    padding-right: $outer-margin;
-    padding-left: $outer-margin;
-    width: 100%;
-  }
-
-  @include columns();
-
-  @include offsets();
-
-  @include breakpoints(".start") {
-    justify-content: flex-start;
-    text-align: start;
-  }
-
-  @include breakpoints(".center") {
-    justify-content: center;
-    text-align: center;
-  }
-
-  @include breakpoints(".end") {
-    justify-content: flex-end;
-    text-align: end;
-  }
-
-  @include breakpoints(".top") {
-    align-items: flex-start;
-  }
-
-  @include breakpoints(".middle") {
-    align-items: center;
-  }
-
-  @include breakpoints(".bottom") {
-    align-items: flex-end;
-  }
-
-  @include breakpoints(".around") {
-    justify-content: space-around;
-  }
-
-  @include breakpoints(".between") {
-    justify-content: space-between;
-  }
-
-  @include breakpoints(".first") {
-    order: -1;
-  }
-
-  @include breakpoints(".last") {
-    order: 1;
-  }
-
-  @include breakpoints(".row-reverse") {
-    flex-direction: row-reverse;
-  }
-
-  @include breakpoints(".col-reverse") {
-    flex-direction: column-reverse;
-  }
-
-  //==== Responsive Utils ====//
-
-  @each $bp in map-keys(variables.$breakpoints) {
-    .hidden-#{$bp}-up {
-      @media (min-width: map-get(variables.$breakpoints, $bp)) {
-        display: none !important;
-      }
-    }
-
-    .hidden-#{$bp}-down {
-      @media (max-width: map-get(variables.$breakpoints, $bp)) {
-        display: none !important;
-      }
-    }
-
-    .trimmed-#{$bp}-up {
-      $value: 0;
-      @if map-get(variables.$breakpoints, $bp) != 0px {
-        $value: map-get(variables.$breakpoints, $bp) - 1;
-      }
-      @media (min-width: ($value)) {
-        padding-right: 0;
-        padding-left: 0;
-
-        > .row {
-          margin-right: 0;
-          margin-left: 0;
-
-          > [class*="xs-"],
-          > [class*="sm-"],
-          > [class*="md-"],
-          > [class*="lg-"],
-          > [class*="xl-"],
-          > [class*="xxl-"] {
-            padding-right: 0;
-            padding-left: 0;
-          }
-        }
-      }
-    }
-
-    .trimmed-#{$bp}-down {
-      $value: 0;
-      @if map-get(variables.$breakpoints, $bp) != 0px {
-        $value: map-get(variables.$breakpoints, $bp) - 1;
-      }
-      @media (max-width: ($value)) {
-        padding-right: 0;
-        padding-left: 0;
-
-        > .row {
-          margin-right: 0;
-          margin-left: 0;
-
-          > [class*="xs-"],
-          > [class*="sm-"],
-          > [class*="md-"],
-          > [class*="lg-"],
-          > [class*="xl-"],
-          > [class*="xxl-"] {
-            padding-right: 0;
-            padding-left: 0;
           }
         }
       }
     }
   }
 }
+
+@mixin offsets(
+  $selector: $column-selector,
+  $modifier-selector: $offset-modifier,
+  $properties: $offset-properties,
+  $columns: $column-count,
+  $queries: $queries
+) {
+  @each $size in $sizes {
+    @for $i from 1 through $columns {
+      #{$selector}#{$size}#{$modifier-delimiter}#{$modifier-selector}#{$modifier-delimiter}#{$i} {
+        @extend %column;
+      }
+    }
+
+    @include queries($size, $queries) {
+      @for $i from 0 through $columns {
+        #{$selector}#{$size}#{$modifier-delimiter}#{$modifier-selector}#{$modifier-delimiter}#{$i} {
+          @content;
+          @each $prop in $properties {
+            @include percentOffset($prop, $columns, $i);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin breakpoints($selector, $queries: $queries) {
+  @each $size in $sizes {
+    #{$selector}#{$modifier-delimiter}#{$size} {
+      @include queries($size, $queries) {
+        @content;
+      }
+    }
+  }
+}
+
+.container-fluid,
+.container {
+  box-sizing: border-box;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $outer-margin;
+  padding-left: $outer-margin;
+}
+
+.container {
+  @include respond-to(sm-min) {
+    width: $container-width-sm;
+  }
+
+  @include respond-to(md-min) {
+    width: $container-width-md;
+  }
+
+  @include respond-to(lg-min) {
+    width: $container-width-lg;
+  }
+
+  @include respond-to(xxl-min) {
+    &-xl {
+      width: $container-width-xxl;
+    }
+  }
+}
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-right: $gutter-compensation;
+  margin-left: $gutter-compensation;
+}
+
+%column {
+  position: relative;
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-right: $outer-margin;
+  padding-left: $outer-margin;
+  width: 100%;
+}
+
+@include columns();
+
+@include offsets();
+
+@include breakpoints('.start') {
+  justify-content: flex-start;
+  text-align: start;
+}
+
+@include breakpoints('.center') {
+  justify-content: center;
+  text-align: center;
+}
+
+@include breakpoints('.end') {
+  justify-content: flex-end;
+  text-align: end;
+}
+
+@include breakpoints('.top') {
+  align-items: flex-start;
+}
+
+@include breakpoints('.middle') {
+  align-items: center;
+}
+
+@include breakpoints('.bottom') {
+  align-items: flex-end;
+}
+
+@include breakpoints('.around') {
+  justify-content: space-around;
+}
+
+@include breakpoints('.between') {
+  justify-content: space-between;
+}
+
+@include breakpoints('.first') {
+  order: -1;
+}
+
+@include breakpoints('.last') {
+  order: 1;
+}
+
+@include breakpoints('.row-reverse') {
+  flex-direction: row-reverse;
+}
+
+@include breakpoints('.col-reverse') {
+  flex-direction: column-reverse;
+}
+
+//==== Responsive Utils ====//
+
+@each $bp in map-keys($breakpoints) {
+  .hidden-#{$bp}-up {
+    @media (min-width: map-get($breakpoints, $bp)) {
+      display: none !important;
+    }
+  }
+
+  .hidden-#{$bp}-down {
+    @media (max-width: map-get($breakpoints, $bp)) {
+      display: none !important;
+    }
+  }
+
+  .trimmed-#{$bp}-up {
+    $value: 0;
+    @if map-get($breakpoints, $bp) != 0px {
+      $value: map-get($breakpoints, $bp) - 1;
+    }
+    @media (min-width: ($value)) {
+      padding-right: 0;
+      padding-left: 0;
+
+      > .row {
+        margin-right: 0;
+        margin-left: 0;
+
+        > [class*='xs-'],
+        > [class*='sm-'],
+        > [class*='md-'],
+        > [class*='lg-'],
+        > [class*='xl-'],
+        > [class*='xxl-'] {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .trimmed-#{$bp}-down {
+    $value: 0;
+    @if map-get($breakpoints, $bp) != 0px {
+      $value: map-get($breakpoints, $bp) - 1;
+    }
+    @media (max-width: ($value)) {
+      padding-right: 0;
+      padding-left: 0;
+
+      > .row {
+        margin-right: 0;
+        margin-left: 0;
+
+        > [class*='xs-'],
+        > [class*='sm-'],
+        > [class*='md-'],
+        > [class*='lg-'],
+        > [class*='xl-'],
+        > [class*='xxl-'] {
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+// }
