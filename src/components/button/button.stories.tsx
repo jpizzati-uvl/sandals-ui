@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Button from './button';
+import { Button } from './button';
 
 export default {
   title: 'Base/Button',
@@ -11,7 +11,7 @@ export default {
 const Template: ComponentStory<typeof Button> = args => (
   <div className="container">
     <div className="row center-xs">
-      <div className="xs-12">
+      <div className="xs-5">
         <Button {...args} />
       </div>
     </div>

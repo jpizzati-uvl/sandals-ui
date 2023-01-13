@@ -1,24 +1,17 @@
 // Theme
 .default {
   color: functions.color(black, df);
+  font-family: variables.$font-os-bold;
   text-transform: uppercase;
 }
 
 // Size
 .xs {
   font-size: 1.2rem;
-  line-height: 3rem;
-  padding: 0 2rem;
+  line-height: 1.7rem;
 }
 
 .sm {
   font-size: 1.4rem;
-  line-height: 3rem;
-  padding: 0 3rem;
-}
-
-.lg {
-  font-size: 2rem;
-  line-height: 5rem;
-  padding: 0 4rem;
+  line-height: 1.9rem;
 }

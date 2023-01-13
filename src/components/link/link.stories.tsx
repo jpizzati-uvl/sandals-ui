@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Link from './link';
+import { Link } from './link';
 
 export default {
   title: 'Base/Link',
@@ -11,7 +11,7 @@ export default {
 const Template: ComponentStory<typeof Link> = args => (
   <div className="container">
     <div className="row center-xs">
-      <div className="xs-12">
+      <div className="xs-5">
         <Link {...args} />
       </div>
     </div>
@@ -30,11 +30,4 @@ linkSM.args = {
   label: 'Link SM',
   size: 'sm',
   onClick: () => console.log('You clicked on Default Link SM'),
-};
-
-export const linkLG = Template.bind({});
-linkLG.args = {
-  label: 'Link LG',
-  size: 'lg',
-  onClick: () => console.log('You clicked on Default Link LG'),
 };

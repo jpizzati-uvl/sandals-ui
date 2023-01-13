@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Link from './link';
+import { Link } from './link';
 
 describe('Button', () => {
   test('renders the Button component', () => {

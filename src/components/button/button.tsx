@@ -15,13 +15,13 @@ export interface ButtonProps {
 /**
  * Primary UI component for user interaction
  */
-export default function Button({
+export const Button = ({
   theme = 'default',
   label,
   size = 'xs',
   onClick,
   ...props
-}: ButtonProps) {
+}: ButtonProps) => {
   return (
     <button
       onClick={onClick}
@@ -31,4 +31,4 @@ export default function Button({
       {label}
     </button>
   );
-}
+};

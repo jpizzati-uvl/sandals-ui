@@ -1,10 +1,10 @@
 // Theme
 .default {
-  background: functions.color(black, df);
+  background: functions.color(gray, c4);
   color: functions.color(white, df);
   font-family: variables.$font-os-bold;
   text-transform: uppercase;
-  @include mixins.fadeIn;
+  width: 100%;
 }
 
 // Size
@@ -16,7 +16,7 @@
 
 .sm {
   font-size: 1.4rem;
-  line-height: 3rem;
+  line-height: 3.5rem;
   padding: 0 3rem;
 }
 
