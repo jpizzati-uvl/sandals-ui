@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/jpizzati-uvl"
   },
-  "version": "0.1.56-alpha",
+  "version": "0.1.57-alpha",
   "description": "The official Sandals UI Component Library",
   "author": "Jorge Pizzati",
   "license": "ISC",
@@ -92,10 +92,10 @@
   "peerDependencies": {
     "react": "^18.2.0"
   },
-  "main": "lib/src/index.js",
+  "main": "dist/src/index.js",
   "files": [
-    "lib"
+    "dist"
   ],
-  "types": "lib/index.d.ts",
+  "types": "dist/index.d.ts",
   "dependencies": {}
 }
