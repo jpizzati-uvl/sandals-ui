@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -12,7 +12,7 @@ module.exports = {
       options: {
         sassLoaderOptions: {
           additionalData:
-            "@use './src/styles/abstracts/mixins'; @use './src/styles/abstracts/functions'; @use './src/styles/abstracts/variables';",
+            "@use './styles/abstracts/mixins'; @use './styles/abstracts/functions'; @use './styles/abstracts/variables';",
         },
         cssLoaderOptions: {
           modules: {

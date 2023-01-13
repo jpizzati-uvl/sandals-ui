@@ -35,7 +35,7 @@ const outputOptions = {
 
 export default [
   {
-    input: 'src/index.ts', // Entry point from where we export all modules
+    input: 'index.ts', // Entry point from where we export all modules
     external: ['react-dom'],
     output: [
       {
@@ -65,7 +65,7 @@ export default [
           [
             'sass',
             {
-              data: "@use './src/styles/abstracts/mixins'; @use './src/styles/abstracts/functions'; @use './src/styles/abstracts/variables';",
+              data: "@use './styles/abstracts/mixins'; @use './styles/abstracts/functions'; @use './styles/abstracts/variables';",
             },
           ],
         ],
@@ -82,7 +82,7 @@ export default [
     ],
   },
   {
-    input: 'dist/src/index.d.ts',
+    input: 'dist/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
     external: [/\.(css|less|scss)$/],

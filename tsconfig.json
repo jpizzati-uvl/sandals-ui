@@ -12,7 +12,7 @@
     "module": "ESNext",
     "declaration": true,
     "emitDeclarationOnly": true,
-    "outDir": "dist/src",
+    "outDir": "dist",
     "sourceMap": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
