@@ -43,7 +43,6 @@ export const Link = ({
       href={href}
       target={onClick ? undefined : target}
       className={`${style.link} ${style[theme]} ${style[size]}`}
-      // dangerouslySetInnerHTML={{ __html:  }}
     >
       {label} <i className="ic-link" style={{ color: accent }} />
     </a>
