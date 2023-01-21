@@ -1,10 +1,8 @@
 /*
 // Font Families
 // ------------------------------------------------ */
-// @use './../abstracts/variables';
-// @use './../abstracts/functions';
 
-// sandals-icon font
+// icons
 @font-face {
   font-family: $font-icons;
   src: url('#{map-deep-get($path, fonts)}/#{$font-icons}/fonts/#{$font-icons}.woff?#{$font-cache}')

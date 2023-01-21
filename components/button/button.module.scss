@@ -1,10 +1,23 @@
-// Theme
-.default {
-  background: functions.color(gray, c4);
-  color: functions.color(white, df);
+.button {
   font-family: variables.$font-os-bold;
   text-transform: uppercase;
   width: 100%;
+}
+
+// Theme
+.default {
+  background: functions.color(black, df);
+  color: functions.color(white, df);
+}
+
+.outline {
+  background: transparent;
+  border: 0.2rem solid;
+}
+
+// Disabled
+.disabled {
+  opacity: 0.38;
 }
 
 // Size

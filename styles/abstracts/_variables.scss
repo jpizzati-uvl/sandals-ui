@@ -6,7 +6,7 @@
 @import './../abstracts/functions';
 
 /*==== Paths ====*/
-$cdn-url: 'https://cdn.sandals.com/sandals/sandals-ui'; // Production
+$cdn-url: 'https://cdn.sandals.com/libs/ui/base'; // Production
 $path: (
   images: '#{$cdn-url}/uploads',
   fonts: '#{$cdn-url}/fonts',
@@ -27,7 +27,7 @@ $font-max-leading: 100;
 $font-cache: 'v=#{unique-id()}';
 
 // Sandals Icons Font
-$font-icons: 'sandals-icons-font' !default;
+$font-icons: 'icons' !default;
 
 // Open Sans Font
 $font-os-light: 'OpenSans-Light' !default;
@@ -37,12 +37,6 @@ $font-os-bold: 'OpenSans-Bold' !default;
 $font-os-extra-bold: 'OpenSans-ExtraBold' !default;
 $font-os-condensed-bold: 'OpenSansCondensed-Bold' !default;
 $font-os-condensed-light: 'OpenSansCondensed-Light' !default;
-
-// Bodoni Font
-$font-bodoni-regular: 'Bodoni-Regular' !default;
-
-// Happy Feet Font
-$font-hf-regular: 'HappyFeet-Regular' !default;
 
 // Fallback Font
 $font-arial: Arial, Helvetica, sans-serif !default;
@@ -124,4 +118,26 @@ $queries: (
 ) !default;
 
 // Icon Variables
-// $ic-example: "\e938";
+$ic-arrow-down: '\e93b';
+$ic-arrow-up: '\e93c';
+$ic-arrow-left: '\e93d';
+$ic-arrow-right: '\e93e';
+$ic-filter: '\e93f';
+$ic-compare: '\e940';
+$ic-reset: '\e941';
+$ic-global: '\e942';
+$ic-bag: '\e943';
+$ic-gallery: '\e944';
+$ic-download: '\e945';
+$ic-info: '\e946';
+$ic-clock: '\e947';
+$ic-magnifier: '\e948';
+$ic-read: '\e949';
+$ic-close: '\e94a';
+$ic-plus: '\e94b';
+$ic-minus: '\e94c';
+$ic-map-pin: '\e94d';
+$ic-user: '\e94e';
+$ic-globe: '\e94f';
+$ic-calendar: '\e950';
+$ic-link: '\e951';

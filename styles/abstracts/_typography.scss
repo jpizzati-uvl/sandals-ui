@@ -1,7 +1,6 @@
 /*
 // Common typography -- DO NOT MODIFY
 // ------------------------------------------------ */
-// @use './variables';
 
 $base: (
   lt: $font-os-light,
@@ -12,14 +11,6 @@ $base: (
   bd-cd: $font-os-condensed-bold,
   eb: $font-os-extra-bold,
 );
-$custom: (
-  rg: $font-hf-regular,
-);
-$weddings: (
-  rg: $font-bodoni-regular,
-);
 $font-families: (
   base: $base,
-  custom: $custom,
-  weddings: $weddings,
 );

@@ -1,20 +1,154 @@
 /*
 // Font Icons
 // ------------------------------------------------ */
-// @use './../abstracts/variables';
 
-// :global {
-  [class^='ic-'],
-  [class*=' ic-'] {
-    font-family: $font-icons !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+[class^='ic-'],
+[class*=' ic-'] {
+  font-family: $font-icons !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ic-arrow-down {
+  &::before {
+    content: $ic-arrow-down;
   }
+}
 
-// }
+.ic-arrow-up {
+  &::before {
+    content: $ic-arrow-up;
+  }
+}
+
+.ic-arrow-left {
+  &::before {
+    content: $ic-arrow-left;
+  }
+}
+
+.ic-arrow-right {
+  &::before {
+    content: $ic-arrow-right;
+  }
+}
+
+.ic-filter {
+  &::before {
+    content: $ic-filter;
+  }
+}
+
+.ic-compare {
+  &::before {
+    content: $ic-compare;
+  }
+}
+
+.ic-reset {
+  &::before {
+    content: $ic-reset;
+  }
+}
+
+.ic-global {
+  &::before {
+    content: $ic-global;
+  }
+}
+
+.ic-bag {
+  &::before {
+    content: $ic-bag;
+  }
+}
+
+.ic-gallery {
+  &::before {
+    content: $ic-gallery;
+  }
+}
+
+.ic-download {
+  &::before {
+    content: $ic-download;
+  }
+}
+
+.ic-info {
+  &::before {
+    content: $ic-info;
+  }
+}
+
+.ic-clock {
+  &::before {
+    content: $ic-clock;
+  }
+}
+
+.ic-magnifier {
+  &::before {
+    content: $ic-magnifier;
+  }
+}
+
+.ic-read {
+  &::before {
+    content: $ic-read;
+  }
+}
+
+.ic-close {
+  &::before {
+    content: $ic-close;
+  }
+}
+
+.ic-plus {
+  &::before {
+    content: $ic-plus;
+  }
+}
+
+.ic-minus {
+  &::before {
+    content: $ic-minus;
+  }
+}
+
+.ic-map-pin {
+  &::before {
+    content: $ic-map-pin;
+  }
+}
+
+.ic-user {
+  &::before {
+    content: $ic-user;
+  }
+}
+
+.ic-globe {
+  &::before {
+    content: $ic-globe;
+  }
+}
+
+.ic-calendar {
+  &::before {
+    content: $ic-calendar;
+  }
+}
+
+.ic-link {
+  &::before {
+    content: $ic-link;
+  }
+}
