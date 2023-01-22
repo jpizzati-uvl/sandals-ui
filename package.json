@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/jpizzati-uvl"
   },
-  "version": "0.1.58-alpha",
+  "version": "0.1.59-alpha",
   "description": "Library of base elements",
   "author": "Jorge Pizzati",
   "license": "ISC",
