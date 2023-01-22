@@ -39,8 +39,13 @@ export default [
     external: ['react-dom'],
     output: [
       {
-        dir: 'dist',
+        dir: 'dist/cjs',
         format: 'cjs',
+        ...outputOptions,
+      },
+      {
+        dir: 'dist/esm',
+        format: 'esm',
         ...outputOptions,
       },
     ],
@@ -71,7 +76,7 @@ export default [
         ],
       }),
       copy({
-        targets: [{ src: 'src/styles', dest: 'dist' }],
+        targets: [{ src: 'styles', dest: 'dist' }],
       }),
       terser(),
       analyze({
@@ -82,7 +87,7 @@ export default [
     ],
   },
   {
-    input: 'dist/index.d.ts',
+    input: 'dist/esm/index.d.ts',
     output: [{ file: 'dist/index.d.ts', format: 'esm' }],
     plugins: [dts()],
     external: [/\.(css|less|scss)$/],

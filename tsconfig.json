@@ -10,9 +10,10 @@
     // Added
     "jsx": "react",
     "module": "ESNext",
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "dist",
+    // Leave this commented out until tsconfig supports multiple outDir options
+    // "declaration": true,
+    // "emitDeclarationOnly": true,
+    // "outDir": "dist/cjs",
     "sourceMap": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
