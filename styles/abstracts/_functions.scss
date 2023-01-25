@@ -1,7 +1,12 @@
+/* 
+--
+-- FILE: _functions.scss
+-- DO NOT MODIFY WITHOUT AUTHORIZATION
+--
+*/
+
 /* stylelint-disable */
-/*
-// Functions
-// ------------------------------------------------ */
+
 @import './colors';
 
 // Normalizing the use of z-index
@@ -61,3 +66,5 @@
 
   @return $string;
 }
+
+/* stylelint-enable */

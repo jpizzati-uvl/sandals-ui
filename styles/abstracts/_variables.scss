@@ -1,7 +1,11 @@
+/* 
+--
+-- FILE: _variables.scss
+-- DO NOT MODIFY WITHOUT AUTHORIZATION
+--
+*/
+
 /* stylelint-disable */
-/*
-// Variables -- DO NOT MODIFY
-// ------------------------------------------------ */
 
 @import './../abstracts/functions';
 
@@ -43,6 +47,7 @@ $font-arial: Arial, Helvetica, sans-serif !default;
 
 // Default Font
 $font-base: $font-os-regular !default;
+$font-fallback: $font-arial !default;
 $font-color: color(black, df) !default;
 $font-weight: 400 !default;
 $font-size: 1.5rem !default;
@@ -141,3 +146,5 @@ $ic-user: '\e94e';
 $ic-globe: '\e94f';
 $ic-calendar: '\e950';
 $ic-link: '\e951';
+
+/* stylelint-enable */

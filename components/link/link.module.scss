@@ -1,16 +1,22 @@
 .link {
-  text-transform: uppercase;
-  font-family: variables.$font-os-bold;
+  color: functions.color(black, df);
 
   i {
+    margin-left: 0.5rem;
     position: relative;
     top: 0.08rem;
   }
 }
 
-// Theme
-.default {
+// Appearance
+.light {
   color: functions.color(black, df);
+  text-transform: capitalize;
+}
+
+.bold {
+  font-family: variables.$font-os-bold;
+  text-transform: uppercase;
 }
 
 // Size

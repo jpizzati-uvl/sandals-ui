@@ -1,8 +1,12 @@
-/* stylelint-disable */
-// @use './../abstracts/variables';
-// @use './../abstracts/functions';
+/* 
+--
+-- FILE: _basic.scss
+-- DO NOT MODIFY WITHOUT AUTHORIZATION
+--
+*/
 
-// :global {
+/* stylelint-disable */
+
 * {
   box-sizing: border-box;
 
@@ -20,7 +24,7 @@ html {
 
 body {
   background: color(white, df);
-  font: $font-weight #{$font-size}/#{$line-height} $font-base;
+  font: $font-weight #{$font-size}/#{$line-height} $font-base, $font-fallback;
   color: $font-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -203,4 +207,5 @@ button {
     }
   }
 }
-// }
+
+/* stylelint-enable */

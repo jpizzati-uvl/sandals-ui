@@ -1,6 +1,26 @@
-/*
-// Common typography -- DO NOT MODIFY
-// ------------------------------------------------ */
+/* 
+--
+-- FILE: _typography.scss
+--
+-- Font Family
+-- CLASSNAME: [css rule]-[font option]-[font variation] 
+-- EXAMPLE: ff-base-rg -> font-family: "OpenSans-Regular";
+--
+-- Font Size
+-- CLASSNAME: [size]:[font size]-[value]
+-- EXAMPLE: xs:fs-14 -> font-size: 1.4rem;
+--
+-- Font Leading
+-- CLASSNAME: [size]:[font leading]-[value]
+-- EXAMPLE: xs:fl-30 -> line-height: 3rem;
+--
+-- Font Tracking
+-- CLASSNAME: [size]:[font tracking]-[value]
+-- EXAMPLE: xs:ft-25 -> letter-spacing: 0.25rem;
+--
+-- DO NOT MODIFY WITHOUT AUTHORIZATION
+--
+*/
 
 $base: (
   lt: $font-os-light,

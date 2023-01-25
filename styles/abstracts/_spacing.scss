@@ -1,6 +1,18 @@
-/*
-// Common spacing -- DO NOT MODIFY
-// ------------------------------------------------ */
+/* 
+--
+-- FILE: _spacing.scss
+--
+-- Margin
+-- CLASSNAME: [size]:[css rule]-[value]
+-- EXAMPLE: xs:m-40 -> margin: 4rem; xs:my-40 -> margin: 4rem 0;
+--
+-- Padding
+-- CLASSNAME: [size]:[css rule]-[value]
+-- EXAMPLE: xs:p-40 -> padding: 4rem; xs:px-40 -> padding: 0 4rem;
+--
+-- DO NOT MODIFY WITHOUT AUTHORIZATION
+--
+*/
 
 $margin: ('m', 'mx', 'my', 'mt', 'mb', 'ml', 'mr');
 $padding: ('p', 'px', 'py', 'pt', 'pb', 'pl', 'pr');

@@ -1,13 +1,13 @@
-/* stylelint-disable */
-/*
-// Grid System -- DO NOT MODIFY
-// Taken from https://github.com/kristoferjoseph/flexboxgrid/blob/sass/src/sass/flexboxgrid.scss
-// http://flexboxgrid.com/
-// ------------------------------------------------ */
-// @use './../abstracts/variables';
-// @use './../abstracts/mixins';
+/* 
+--
+-- FILE: _grid.scss
+-- CREDIT: https://github.com/kristoferjoseph/flexboxgrid
+-- DO NOT MODIFY WITHOUT AUTHORIZATION
+--
+*/
 
-// :global {
+/* stylelint-disable */
+
 $column-count: 12 !default;
 $column-selector: '.' !default;
 $offset-modifier: 'offset' !default;
@@ -292,4 +292,5 @@ $offset-properties: 'margin-left' !default;
     }
   }
 }
-// }
+
+/* stylelint-enable */

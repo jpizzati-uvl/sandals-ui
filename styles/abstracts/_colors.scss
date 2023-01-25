@@ -1,55 +1,62 @@
-/* stylelint-disable */
-/*
-// Colors Abstract -- DO NOT MODIFY
-// ------------------------------------------------ */
+/* 
+--
+-- FILE: _colors.scss
+--
+-- Font Color
+-- CLASSNAME: [css rule]-[color option]-[color variation]
+-- EXAMPLE: fc-gold-df -> color: #caaa81;
+--
+-- Background
+-- CLASSNAME: [css rule]-[color option]-[color variation]
+-- EXAMPLE: bg-black -> background: #000;
+--
+-- Gradient Background
+-- CLASSNAME: [css rule]-[gradient option]-[gradient flag]
+-- EXAMPLE: bg-teal-gt -> background-image: linear-gradient(to bottom, #2140c4 0%, #61ccdb 100%);
+--
+-- DO NOT MODIFY WITHOUT AUTHORIZATION
+--
+*/
 
 // Colors
 $black: (
   df: #000,
 );
-
 $white: (
   df: #fff,
 );
-
 $blue: (
   df: #447daa,
   dk: #0d2542,
   lt: #18a9e5,
   cy: #2bcfde,
 );
-
 $teal: (
   df: #0d2542,
   dk: #447daa,
   lt: #18a9e5,
 );
-
 $gray: (
   24: #242424,
   84: #848484,
   c4: #c4c4c4,
-  dd: #dddddd,
+  dd: #ddd,
   f1: #f1f1f1,
 );
-
 $red: (
-  df: #cc0000,
+  df: #c00,
   lt: #efd6d6,
 );
-
 $yellow: (
   df: #e3e333,
 );
-
 $gold: (
   df: #caaa81,
   lt: #e6e1d9,
 );
 
 // Gradients
-$tealGt: (#2140c4, #61ccdb);
-
+$teal-gt: (#2140c4, #61ccdb);
 $colors: (
   black: $black,
   white: $white,
@@ -60,7 +67,6 @@ $colors: (
   yellow: $yellow,
   gold: $gold,
 );
-
 $gradients: (
-  teal-gt: $tealGt,
+  teal-gt: $teal-gt,
 );

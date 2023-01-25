@@ -2,45 +2,35 @@ import React from 'react';
 import style from './button.module.scss';
 
 export interface ButtonProps {
+  appearance?: 'solid' | 'outline';
   /** * "true", "false" */
   disabled?: boolean;
-  theme?: 'default' | 'outline';
-  /** * Change background or border color  */
-  accent?: string;
   /** * Call to action */
-  label: string;
+  label: React.ReactNode | string;
   size?: 'xs' | 'sm' | 'lg';
   /** * Optional click handler */
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 /**
  * Primary UI component for user interaction
  */
 export const Button = ({
+  appearance = 'solid',
   disabled = false,
-  theme = 'default',
-  accent,
   label,
   size = 'xs',
   onClick,
   ...props
 }: ButtonProps) => {
-  const customStyles =
-    theme === 'outline'
-      ? { borderColor: `${accent}`, color: `${accent}` }
-      : { background: `${accent}` };
-
   return (
     <button
       {...props}
       disabled={disabled}
       onClick={onClick}
-      style={customStyles}
-      className={`${style.button} ${style[theme]} ${style[size]} ${
-        disabled ? style.disabled : null
-      }`}
-      dangerouslySetInnerHTML={{ __html: label }}
-    />
+      className={`${style.button} ${style[appearance]} ${style[size]}`}
+    >
+      {label}
+    </button>
   );
 };

@@ -1,16 +1,15 @@
 import React from 'react';
-import style from './link.module.scss';
+import linkStyle from './link.module.scss';
+import buttonStyle from './../button/button.module.scss';
 
 export interface LinkProps {
-  theme?: 'default';
+  appearance?: 'light' | 'bold' | 'button';
   /** * Call to action */
-  label: string;
-  /** * Change arrow icon color  */
-  accent?: string;
+  label: React.ReactNode | string;
   /** * Link to page */
   href?: string | undefined;
   target?: '_blank' | '_self' | '_parent' | '_top';
-  size?: 'xs' | 'sm';
+  size?: 'xs' | 'sm' | 'lg';
   /** * Optional click handler */
   onClick?: () => void;
 }
@@ -19,8 +18,7 @@ export interface LinkProps {
  * Primary UI component for user interaction
  */
 export const Link = ({
-  theme = 'default',
-  accent,
+  appearance = 'bold',
   label = 'Link',
   href = '#',
   target = '_self',
@@ -28,23 +26,28 @@ export const Link = ({
   onClick,
   ...props
 }: LinkProps) => {
-  const clickHandler = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    clickAction: () => void
-  ) => {
+  const hasHref = href && href !== '#';
+  const buttonUI = appearance === 'button';
+
+  function clickHandler(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
-    clickAction();
-  };
+    onClick && onClick();
+  }
 
   return (
     <a
       {...props}
-      onClick={onClick ? e => clickHandler(e, onClick) : undefined}
+      onClick={!hasHref ? clickHandler : undefined}
       href={href}
-      target={onClick ? undefined : target}
-      className={`${style.link} ${style[theme]} ${style[size]}`}
+      target={hasHref ? target : undefined}
+      className={`${
+        buttonUI
+          ? `${buttonStyle.button} ${buttonStyle.solid} ${buttonStyle[size]}`
+          : `${linkStyle.link} ${linkStyle[appearance]} ${linkStyle[size]}`
+      } 
+       `}
     >
-      {label} <i className="ic-link" style={{ color: accent }} />
+      {label}
     </a>
   );
 };

@@ -1,50 +1,75 @@
-// :global {
-  .capitalize {
-    text-transform: capitalize;
-  }
+/* 
+--
+-- FILE: _utils.scss
+--
+-- Utils
+-- CLASSNAME: [css rule]
+-- EXAMPLE: fh -> height: 100%; fw -> width: 100%;
+--
+-- DO NOT MODIFY WITHOUT AUTHORIZATION
+--
+*/
 
-  .uppercase {
-    text-transform: uppercase;
-  }
+.cap {
+  text-transform: capitalize;
+}
 
-  .lowercase {
-    text-transform: lowercase;
-  }
+.up-case {
+  text-transform: uppercase;
+}
 
-  .unclickable {
-    pointer-events: none;
-  }
+.low-case {
+  text-transform: lowercase;
+}
 
-  .clickable {
-    pointer-events: all;
-  }
+.clk-none {
+  pointer-events: none;
+}
 
-  .fh {
-    height: 100%;
-    max-height: 100vh;
-  }
+.clk-all {
+  pointer-events: all;
+}
 
-  .fw {
-    width: 100%;
-    max-width: 100%;
-  }
+.d-blk {
+  display: block;
+}
 
-  .fvh {
-    height: 100vh;
-    overflow: hidden;
-  }
+.d-inl {
+  display: inline;
+}
 
-  .fvw {
-    width: 100vw;
-    overflow: hidden;
-  }
+.p-abs {
+  position: absolute;
+}
 
-  .ovf-x {
-    overflow-x: auto;
-  }
+.p-rel {
+  position: relative;
+}
 
-  .ovf-y {
-    overflow-y: auto;
-  }
+.fh {
+  height: 100%;
+  max-height: 100vh;
+}
 
-// }
+.fw {
+  width: 100%;
+  max-width: 100%;
+}
+
+.fvh {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fvw {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.ovf-x {
+  overflow-x: auto;
+}
+
+.ovf-y {
+  overflow-y: auto;
+}
