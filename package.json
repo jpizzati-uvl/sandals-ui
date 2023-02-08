@@ -1,9 +1,9 @@
 {
-  "name": "@sanservices/base-ui",
+  "name": "@jpizzati-uvl/sandals-ui-lib",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/sanservices"
+    "registry": "https://npm.pkg.github.com/jpizzati-uvl"
   },
-  "version": "0.1.0-alpha",
+  "version": "0.1.0-beta",
   "description": "Library of base elements for user interface interaction",
   "author": {
     "name": "San Services"
@@ -17,8 +17,7 @@
     "test": "jest",
     "dev": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prepare": "husky install",
-    "chromatic": "npx chromatic --project-token=86bce36d3f3e --exit-once-uploaded"
+    "prepare": "husky install"
   },
   "lint-staged": {
     "./**/*.{ts,tsx}": [
