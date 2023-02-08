@@ -1,6 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button } from './button';
+import Wrapper from '../../.storybook/wrapper';
+import { styles } from './button.styles';
 
 export default {
   title: 'Components/Button',
@@ -8,36 +10,32 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = args => (
-  <div className="container">
-    <div className="row center-xs">
-      <div className="xs-6 xs:mt-50">
-        <Button {...args} />
-      </div>
-    </div>
-  </div>
+const TemplateA: ComponentStory<typeof Button> = args => (
+  <Wrapper className="mx-auto mt-[5rem] w-4/12">
+    <Button {...args}>
+      <span className={styles.filled}>Button</span>
+    </Button>
+  </Wrapper>
 );
 
-export const Default = Template.bind({});
-const defaultLabel = <span>Button</span>;
-
-Default.args = {
-  appearance: 'solid',
-  label: defaultLabel,
-  size: 'xs',
+export const CustomA = TemplateA.bind({});
+CustomA.args = {
+  type: 'button',
+  // eslint-disable-next-line no-alert
+  onPress: () => alert('Pressed Button'),
 };
 
-export const Custom = Template.bind({});
-
-const customLabel = (
-  <span className="fc-blue-df">
-    Download
-    <i className="ic-download" />
-  </span>
+const TemplateB: ComponentStory<typeof Button> = args => (
+  <Wrapper className="mx-auto mt-[5rem] w-4/12">
+    <Button {...args}>
+      <span className={styles.outline}>Button</span>
+    </Button>
+  </Wrapper>
 );
 
-Custom.args = {
-  appearance: 'outline',
-  label: customLabel,
-  size: 'xs',
+export const CustomB = TemplateB.bind({});
+CustomB.args = {
+  type: 'button',
+  // eslint-disable-next-line no-alert
+  onPress: () => alert('Pressed Button'),
 };

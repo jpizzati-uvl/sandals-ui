@@ -18,5 +18,5 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
   },
-  "exclude": ["**/*.test.tsx", "**/*.stories.tsx"]
+  "exclude": ["**/*.test.tsx", "**/*.stories.tsx", "**/*.styles.ts"]
 }

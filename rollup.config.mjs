@@ -7,8 +7,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 
 // CSS Processing
-import postcss from 'rollup-plugin-postcss';
-import autoprefixer from 'autoprefixer';
 import copy from 'rollup-plugin-copy';
 
 // rollup your .d.ts files
@@ -27,10 +25,6 @@ const outputOptions = {
   exports: 'named',
   preserveModules: true,
   sourcemap: true,
-  banner: `/*
- * Library Boilerplate
- * Dev: Jorge Pizzati (@jpizzati-uvl)
- */`,
 };
 
 export default [
@@ -55,28 +49,14 @@ export default [
       commonjs({ extensions: ['.js', '.ts'] }),
       typescript({
         tsconfig: './tsconfig.json',
-        exclude: ['**/*.test.tsx', '**/*.stories.tsx'],
-      }),
-      postcss({
-        plugins: [autoprefixer()],
-        extract: false,
-        modules: {
-          generateScopedName: '[hash:base64:5]',
-        },
-        autoModules: false,
-        sourceMap: true,
-        minimize: true,
-        use: [
-          [
-            'sass',
-            {
-              data: "@use './styles/abstracts/mixins'; @use './styles/abstracts/functions'; @use './styles/abstracts/variables';",
-            },
-          ],
-        ],
       }),
       copy({
-        targets: [{ src: 'styles', dest: 'dist' }],
+        targets: [
+          {
+            src: ['styles'],
+            dest: 'dist',
+          },
+        ],
       }),
       terser(),
       analyze({

@@ -1,0 +1,8 @@
+body {
+  height: 100vh;
+  background: #f7f7f7;
+}
+
+.sb-show-main.sb-main-padded {
+  padding: 0;
+}

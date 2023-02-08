@@ -1,36 +1,38 @@
 import React from 'react';
-import style from './button.module.scss';
+// import style from './button.module.scss';
 
 export interface ButtonProps {
-  appearance?: 'solid' | 'outline';
-  /** * "true", "false" */
+  /** Required if no label is present e.g. menu */
+  'aria-label'?: string;
+  /** CTA; only inline elements  */
+  children?: React.ReactNode | string;
+  /**  "true", "false" */
   disabled?: boolean;
-  /** * Call to action */
-  label: React.ReactNode | string;
-  size?: 'xs' | 'sm' | 'lg';
-  /** * Optional click handler */
-  onClick: () => void;
+  type?: 'button' | 'submit' | 'reset';
+  /**  Event handler */
+  onPress: () => void;
 }
 
 /**
  * Primary UI component for user interaction
  */
 export const Button = ({
-  appearance = 'solid',
   disabled = false,
-  label,
-  size = 'xs',
-  onClick,
+  type = 'button',
+  onPress,
+  children,
   ...props
 }: ButtonProps) => {
   return (
     <button
       {...props}
+      data-testid="button-ui"
       disabled={disabled}
-      onClick={onClick}
-      className={`${style.button} ${style[appearance]} ${style[size]}`}
+      className="block w-full"
+      onClick={onPress}
+      type={type}
     >
-      {label}
+      {children}
     </button>
   );
 };

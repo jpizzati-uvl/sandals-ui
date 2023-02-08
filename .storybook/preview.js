@@ -1,4 +1,6 @@
-import '!style-loader!css-loader!sass-loader!./../styles/index.scss';
+import '!style-loader!css-loader!./index.css';
+import './../styles/index.css';
+import '../utils/optimization/resolve';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

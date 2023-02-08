@@ -1,0 +1,93 @@
+/* 
+--
+-- FILE: icons.css
+-- DO NOT MODIFY WITHOUT AUTHORIZATION
+--
+*/
+
+[class^='ic-'],
+[class*=' ic-'] {
+  font-family: 'icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+i {
+  position: relative;
+  top: 0.08rem;
+}
+.ic-arrow-down::before {
+  content: '\e93b';
+}
+.ic-arrow-up::before {
+  content: '\e93c';
+}
+.ic-arrow-left::before {
+  content: '\e93d';
+}
+.ic-arrow-right::before {
+  content: '\e93e';
+}
+.ic-filter::before {
+  content: '\e93f';
+}
+.ic-compare::before {
+  content: '\e940';
+}
+.ic-reset::before {
+  content: '\e941';
+}
+.ic-global::before {
+  content: '\e942';
+}
+.ic-bag::before {
+  content: '\e943';
+}
+.ic-gallery::before {
+  content: '\e944';
+}
+.ic-download::before {
+  content: '\e945';
+}
+.ic-info::before {
+  content: '\e946';
+}
+.ic-clock::before {
+  content: '\e947';
+}
+.ic-magnifier::before {
+  content: '\e948';
+}
+.ic-read::before {
+  content: '\e949';
+}
+.ic-close::before {
+  content: '\e94a';
+}
+.ic-plus::before {
+  content: '\e94b';
+}
+.ic-minus::before {
+  content: '\e94c';
+}
+.ic-map-pin::before {
+  content: '\e94d';
+}
+.ic-user::before {
+  content: '\e94e';
+}
+.ic-globe::before {
+  content: '\e94f';
+}
+.ic-calendar::before {
+  content: '\e950';
+}
+.ic-link::before {
+  content: '\e951';
+}

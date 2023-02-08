@@ -8,16 +8,11 @@ module.exports = {
     '@storybook/addon-interactions',
     'storybook-dark-mode',
     {
-      name: '@storybook/preset-scss',
+      name: '@storybook/addon-postcss',
       options: {
-        sassLoaderOptions: {
-          additionalData:
-            "@use './styles/abstracts/mixins'; @use './styles/abstracts/functions'; @use './styles/abstracts/variables';",
-        },
-        cssLoaderOptions: {
-          modules: {
-            localIdentName: '[name]__[local]',
-          },
+        postcssLoaderOptions: {
+          // When using postCSS 8
+          implementation: require('postcss'),
         },
       },
     },
